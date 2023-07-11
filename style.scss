@@ -1,0 +1,1174 @@
+/* Color variables */
+$color-blue: #08a6e4;
+$color-red: #fb3b64;
+$color-green: #55dfb4;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans";
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+    background-color: white;
+    z-index: 2;
+    height: 70px;
+    width: 100%;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    transition: 0.5s;
+    &__logo {
+        width: 230px;
+        padding: 20px 15px 15px 25px;
+    }
+    &__burger-icon {
+        color: $color-blue;
+        position: absolute;
+        right: 35px;
+        top: 35px;
+        cursor: pointer;
+    }
+    &__close-burger {
+        display: none;
+    }
+    &__close-icon {
+        color: $color-blue;
+        position: absolute;
+        right: 35px;
+        top: 35px;
+    }
+    &__menu-text {
+        font-size: 11px;
+        margin: 15px 0 0 20px;
+        letter-spacing: 3px;
+        padding-left: 10px;
+        opacity: 1;
+    }
+    &__menu-text > p:first-child {
+        padding-top: 0px;
+        font-weight: 700;
+        color: black;
+    }
+    &__menu-text > p {
+        padding-top: 10px;
+        color: #a5a5a5;
+    }
+    &__menu-normal {
+        display: none;
+    }
+}
+/* HEADER */
+
+/* BURGER MENU */
+#open:target {
+    ~ .header {
+        height: 220px;
+
+        .header__burger-icon {
+            display: none;
+        }
+
+        .header__close-burger {
+            display: block;
+        }
+
+        .header__menu-text {
+            animation: header__menu-text 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        }
+    }
+}
+
+@keyframes header__menu-text {
+    0% {
+        filter: blur(1px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+#close:target ~ .header {
+    height: 70px;
+}
+/* BURGER MENU */
+
+/* SCREEN1 */
+.screen1 {
+    padding-top: 150px;
+    text-align: center;
+    &__h1-text {
+        font-size: 35px;
+        font-weight: 400;
+        font-family: "Raleway", sans-serif;
+    }
+    &__p-text {
+        padding: 30px 45px 55px 45px;
+    }
+    &__btn {
+        background: $color-blue;
+        border-radius: 35px;
+        box-shadow: 1px 2px 6px #07ace6;
+        border: 0px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 25px 90px 25px 90px;
+        text-decoration: none;
+        outline: none;
+    }
+    &__img {
+        width: 100vw;
+        padding-top: 20%;
+    }
+    &__under-laptop-text {
+        font-size: 35px;
+        font-weight: 300;
+        padding: 20px 40px 20px 40px;
+        font-family: "Raleway", sans-serif;
+    }
+    &__info-box > img {
+        width: 210px;
+        padding-top: 10%;
+    }
+    &__info-box > p {
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 100;
+        color: gray;
+        padding: 0 100px 0 100px;
+    }
+}
+/* SCREEN1 */
+
+/* SCREEN2 */
+.screen2 {
+    margin-top: 80px;
+    padding: 40px 25px 40px 25px;
+    background-color: #f7f7f7;
+    text-align: center;
+
+    /* card1 */
+    &__card1 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        height: auto;
+    }
+
+    &__img-section > img {
+        padding: 10px 34px 10px 34px;
+        width: 80%;
+        text-align: center;
+    }
+
+    &__card1-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 0px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card1-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card1-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-red;
+    }
+    /* card1 */
+
+    /* card2 */
+    &__card2 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        margin-top: 40px;
+        height: auto;
+    }
+
+    &__card2-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 0px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card2-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card2-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-blue;
+    }
+    /* card2 */
+
+    /* card3 */
+    &__card3 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        margin: 40px 0 0 0;
+        height: auto;
+    }
+
+    &__card3-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 30px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card3-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card3-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-green;
+    }
+
+    &__card3-img-section img {
+        border-radius: 5px;
+        width: 100%;
+        background-color: #55dfb4;
+    }
+    /* card 3 */
+}
+/* SCREEN2 */
+
+/* SCREEN3 */
+.screen3 {
+    margin-top: 30px;
+    padding: 40px 25px 40px 25px;
+    &__pricing-titel {
+        font-family: "Raleway", sans-serif;
+        font-size: 36px;
+        font-weight: 400;
+        padding: 0 0 15px 0;
+        text-align: center;
+    }
+    /* card1 */
+    &__pricing-card {
+        transition: 0.5s;
+        border: 1px solid $color-red;
+        border-radius: 18px;
+        width: 310px;
+        margin: auto;
+        height: 270px;
+    }
+
+    &__pricing-card:hover {
+        border: 1px solid $color-red;
+        border-radius: 18px;
+        width: 340px;
+        margin: auto;
+        height: 290px;
+        box-shadow: 14px 18px 30px -20px #fb3b659a;
+    }
+
+    &__pricing-card-left {
+        transition: 0.5s;
+        position: relative;
+        left: 50px;
+        top: 70px;
+    }
+
+    &__pricing-card:hover .screen3__pricing-card-left {
+        position: relative;
+        left: 60px;
+        top: 80px;
+    }
+
+    &__pricing-card-left > p {
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__pricing-card-left > span {
+        font-family: "Open Sans";
+        font-weight: 300;
+        font-size: 46px;
+        color: $color-red;
+    }
+
+    &__pricing-card-right {
+        transition: 0.5s;
+        position: relative;
+        left: 150px;
+        bottom: 90px;
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    &__pricing-card:hover .screen3__pricing-card-right {
+        position: relative;
+        left: 150px;
+        bottom: 70px;
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    &__pricing-card-right > div {
+        margin: 20px;
+    }
+
+    &__pricing-card-btn1 {
+        transition: 0.5s;
+        position: relative;
+        bottom: 70px;
+        left: 75px;
+        background: $color-red;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+
+    &__pricing-card:hover .screen3__pricing-card-btn1 {
+        position: relative;
+        bottom: 50px;
+        left: 90px;
+        background: $color-red;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+    /* card1 */
+
+    /* card2 */
+    &__pricing-card2 {
+        transition: 0.5s;
+        border: 1px solid $color-blue;
+        border-radius: 18px;
+        width: 310px;
+        margin: auto;
+        height: 270px;
+        margin-top: 60px;
+    }
+
+    &__pricing-card2:hover {
+        border: 1px solid $color-blue;
+        border-radius: 18px;
+        width: 340px;
+        margin: auto;
+        height: 290px;
+        margin-top: 60px;
+        box-shadow: 14px 18px 30px -20px #07abe69a;
+    }
+
+    &__pricing-card2-left {
+        transition: 0.5s;
+        position: relative;
+        left: 50px;
+        top: 70px;
+    }
+
+    &__pricing-card2:hover .screen3__pricing-card2-left {
+        position: relative;
+        left: 60px;
+        top: 80px;
+    }
+
+    &__pricing-card2-left > p:first-child {
+        position: inherit;
+        left: -18px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__pricing-card2-left > span {
+        font-family: "Open Sans";
+        font-weight: 300;
+        font-size: 46px;
+        color: $color-blue;
+    }
+
+    &__pricing-card2-left > p:last-child {
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        position: inherit;
+        left: 5px;
+    }
+
+    &__pricing-card-btn2 {
+        transition: 0.5s;
+        position: relative;
+        bottom: 85px;
+        left: 75px;
+        background: $color-blue;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+
+    &__pricing-card2:hover .screen3__pricing-card-btn2 {
+        position: relative;
+        bottom: 60px;
+        left: 90px;
+        background: $color-blue;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+    /* card2 */
+
+    /* card3 */
+    &__pricing-card3 {
+        transition: 0.5s;
+        border: 1px solid $color-green;
+        border-radius: 18px;
+        width: 310px;
+        margin: auto;
+        height: 270px;
+        margin-top: 60px;
+    }
+
+    &__pricing-card3:hover {
+        border: 1px solid $color-green;
+        border-radius: 18px;
+        width: 340px;
+        margin: auto;
+        height: 290px;
+        margin-top: 60px;
+        box-shadow: 14px 18px 30px -20px #07abe69a;
+    }
+
+    &__pricing-card3-left {
+        transition: 0.5s;
+        position: relative;
+        left: 50px;
+        top: 70px;
+    }
+
+    &__pricing-card3:hover .screen3__pricing-card3-left {
+        position: relative;
+        left: 60px;
+        top: 80px;
+    }
+
+    &__pricing-card3-left > p:first-child {
+        position: inherit;
+        left: -5px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    &__pricing-card3-left > span {
+        font-family: "Open Sans";
+        font-weight: 300;
+        font-size: 46px;
+        color: $color-green;
+    }
+
+    &__pricing-card3-left > :last-child {
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        position: inherit;
+        left: 5px;
+    }
+
+    &__pricing-card-btn3 {
+        transition: 0.5s;
+        position: relative;
+        bottom: 85px;
+        left: 75px;
+        background: $color-green;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+
+    &__pricing-card3:hover .screen3__pricing-card-btn3 {
+        position: relative;
+        bottom: 65px;
+        left: 90px;
+        background: $color-green;
+        border-radius: 35px;
+        border: 0px;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 20px 60px 20px 60px;
+        text-decoration: none;
+        outline: none;
+    }
+    /* card3 */
+
+    /* info-form */
+    &__info-form {
+        margin-top: 15%;
+    }
+
+    &__info h1 {
+        font-family: "Raleway", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    &__info p {
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 37px;
+    }
+
+    &__info-icon {
+        margin-bottom: 10px;
+        font-family: "Open Sans";
+        font-weight: 600;
+        font-size: 16px;
+        color: #a5a5a5;
+    }
+
+    &__info-icon > i {
+        margin-left: 2px;
+    }
+
+    &__info-icon > span {
+        margin-left: 7px;
+    }
+
+    &__form {
+        margin-top: 30px;
+    }
+
+    &__form p {
+        padding: 10px 0 10px 0;
+        font-family: "Open Sans";
+        font-weight: 600;
+        font-size: 11px;
+        letter-spacing: 5px;
+        color: $color-blue;
+    }
+
+    /* input */
+    input[type="text"] {
+        outline: 0;
+        border-width: 0 0 1px;
+        border-color: #95989a;
+        width: 100%;
+    }
+
+    input[type="text"]:hover {
+        outline: 0;
+        border-width: 0 0 1px;
+        border-color: $color-blue;
+        width: 100%;
+    }
+
+    input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__form-input-checkbox {
+        margin-top: 40px;
+    }
+    /* input */
+
+    &__form-input-checkbox > div {
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 12px;
+        margin: 0 10px 0 35px;
+        position: relative;
+        top: -33px;
+    }
+
+    &__form-btn {
+        position: relative;
+        left: 40vw;
+        bottom: 30px;
+        background: #3498db;
+        border-radius: 35px;
+        box-shadow: 1px 2px 6px $color-blue;
+        border: 0px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 20px 90px 20px 90px;
+        text-decoration: none;
+        outline: none;
+    }
+    /* info-form */
+}
+/* SCREEN3 */
+
+/* FOOTER */
+.footer {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.15);
+    &__logo {
+        width: 230px;
+        padding: 30px 15px 15px 25px;
+    }
+    &__copyright {
+        color: #a5a5a5;
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 11px;
+        position: relative;
+        top: -20px;
+        left: 30px;
+    }
+    &__right-section > i {
+        position: relative;
+        bottom: 60px;
+        left: 70vw;
+        margin-left: 10px;
+    }
+}
+/* FOOTER */
+
+/* 
+Common breakpoints:
+- 320px — 480px: Mobile devices
+- 481px — 768px: iPads, Tablets
+- 769px — 1024px: Small screens, laptops
+- 1025px — 1200px: Desktops, large screens
+- 1201px and more —  Extra large screens, TV
+*/
+
+/* Screen media variables */
+$medium: 481px;
+$medium-plus: 769px;
+$large: 1025px;
+$xtra-large: 1201px;
+
+@media (min-width: $medium) {
+}
+@media (min-width: $medium-plus) {
+    .screen1 {
+        &__img {
+            transition: 0.5s;
+            padding-top: 5vw;
+        }
+    }
+    .screen2 {
+        margin-top: 80px;
+        padding: 40px 20vw 40px 20vw;
+        background-color: #f7f7f7;
+        text-align: center;
+        transition: 0.5s;
+    }
+    .screen3__form-btn {
+        position: relative;
+        left: 60vw;
+        bottom: 30px;
+        background: #3498db;
+        border-radius: 35px;
+        box-shadow: 1px 2px 6px $color-blue;
+        border: 0px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 20px 90px 20px 90px;
+        text-decoration: none;
+        outline: none;
+        transition: 0.5s;
+    }
+    .footer__right-section > i {
+        position: relative;
+        bottom: 60px;
+        left: 80vw;
+        margin-left: 10px;
+        transition: 0.5s;
+    }
+}
+
+@media (min-width: $large) {
+    .header {
+        &__menu-mobile {
+            display: none;
+        }
+        &__menu-normal {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        &__menu-text-vertical {
+            display: inherit;
+        }
+        &__menu-text-vertical > p {
+            margin-right: 5vw;
+            font-weight: 700;
+            font-size: 11px;
+            color: #a5a5a5;
+        }
+        &__menu-text-vertical > p:first-child {
+            color: #000000;
+        }
+    }
+    .screen1 {
+        &__btn {
+            background: $color-blue;
+            border-radius: 35px;
+            box-shadow: 1px 2px 6px #07ace6;
+            border: 0px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 25px 15vw 25px 15vw;
+            text-decoration: none;
+            outline: none;
+            transition: 0.5s;
+        }
+        &__main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
+    .screen2 {
+        display: block;
+        margin-top: 80px;
+        padding: 40px 15vw 40px 15vw;
+        background-color: #f7f7f7;
+        text-align: center;
+        transition: 0.5s;
+        &__card1 {
+            padding: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+        &__card1-text-section {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        &__card1-text-section > p {
+            font-size: 16px;
+            padding: 0;
+            margin: 0 40px 15px 20px;
+        }
+        &__card1-line-section {
+            width: 250px;
+            display: block;
+            margin-left: 20px;
+        }
+        &__card2 {
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        &__card2-text-section {
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        &__card2-text-section > p {
+            font-size: 16px;
+            padding: 0;
+            margin: 0 40px 15px 20px;
+        }
+        &__card2-line-section {
+            width: 250px;
+            display: block;
+            margin-left: 20px;
+        }
+        &__img-section > img {
+            width: auto;
+            height: 250px;
+            margin: 0 50px 0 0;
+            padding: 0;
+        }
+        &__card3 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f7f7f7;
+            margin: 40px 0 0 0;
+            height: 250px;
+            border-radius: 0px;
+            border: 0px;
+        }
+        &__card3-text-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 250px;
+            margin: 0px 40px 0px 0px;
+            padding: 0 0 20px 0;
+            background-color: white;
+            border-radius: 5px;
+            border: 1px solid #e8e9ed;
+        }
+        &__card3-text-section > p {
+            font-size: 16px;
+            padding: 0;
+            margin: 0 40px 15px 20px;
+        }
+        &__card3-line-section {
+            display: block;
+            margin-left: 20px;
+            width: 250px;
+        }
+        &__card3-img-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: $color-green;
+            width: 900px;
+            height: 250px;
+            margin: 0;
+            padding: 0;
+            border-radius: 5px;
+            border: 1px solid #e8e9ed;
+        }
+        &__card3-img-section > img {
+            width: 200px;
+            height: 150px;
+        }
+    }
+    .screen3 {
+        &__pricing-card-right {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 35px;
+        }
+        &__pricing-card-right > div {
+            margin: 8px;
+        }
+        &__pricing-card-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        &__pricing-card-btn1 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -30px;
+            left: 0;
+        }
+        &__pricing-card2-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        &__pricing-card-btn2 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -30px;
+            left: 0;
+        }
+        &__pricing-card3-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        &__pricing-card-btn3 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -30px;
+            left: 0;
+        }
+        &__pricing-section {
+            display: flex;
+        }
+        &__pricing-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 60px;
+            height: 420px;
+        }
+        &__pricing-card:hover {
+            border: 1px solid #fb3b64;
+            border-radius: 18px;
+            width: 320px;
+            margin: auto;
+            margin-top: 60px;
+            height: 440px;
+            box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
+        }
+        &__pricing-card:hover .screen3__pricing-card-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        &__pricing-card:hover .screen3__pricing-card-right {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            font-family: "Open Sans";
+            font-weight: 400;
+            font-size: 14px;
+        }
+        &__pricing-card:hover .screen3__pricing-card-btn1 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -34px;
+            left: 0px;
+            background: $color-red;
+            border-radius: 35px;
+            border: 0px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 20px 60px 20px 60px;
+            text-decoration: none;
+            outline: none;
+        }
+        &__pricing-card2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 420px;
+        }
+        &__pricing-card2:hover {
+            border: 1px solid $color-blue;
+            border-radius: 18px;
+            width: 320px;
+            margin: auto;
+            margin-top: 60px;
+            height: 440px;
+            box-shadow: 14px 18px 30px -20px #07abe69a;
+        }
+        &__pricing-card2:hover .screen3__pricing-card2-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        &__pricing-card2:hover .screen3__pricing-card2-right {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            font-family: "Open Sans";
+            font-weight: 400;
+            font-size: 14px;
+        }
+        &__pricing-card2:hover .screen3__pricing-card-btn2 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -34px;
+            left: 0px;
+            background: $color-blue;
+            border-radius: 35px;
+            border: 0px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 20px 60px 20px 60px;
+            text-decoration: none;
+            outline: none;
+        }
+        &__pricing-card3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 420px;
+        }
+        &__pricing-card3:hover {
+            border: 1px solid $color-green;
+            border-radius: 18px;
+            width: 320px;
+            margin: auto;
+            margin-top: 60px;
+            height: 440px;
+            box-shadow: 14px 18px 30px -20px #07abe69a;
+        }
+        &__pricing-card3:hover .screen3__pricing-card3-left {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+        &__pricing-card3:hover .screen3__pricing-card3-right {
+            position: initial;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            font-family: "Open Sans";
+            font-weight: 400;
+            font-size: 14px;
+        }
+        &__pricing-card3:hover .screen3__pricing-card-btn3 {
+            transition: 0.5s;
+            position: relative;
+            bottom: -34px;
+            left: 0px;
+            background: $color-green;
+            border-radius: 35px;
+            border: 0px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 20px 60px 20px 60px;
+            text-decoration: none;
+            outline: none;
+        }
+        &__info-form {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+        }
+        &__info > p {
+            margin-top: 15px;
+        }
+        &__info-icons {
+            display: flex;
+        }
+        &__info-icon:last-child {
+            margin-left: 20px;
+        }
+        &__form {
+            margin-top: 0px;
+        }
+        /* input */
+        input[type="text"] {
+            outline: 0;
+            border-width: 0 0 1px;
+            border-color: #95989a;
+            width: 440px;
+        }
+        input[type="text"]:hover {
+            outline: 0;
+            border-width: 0 0 1px;
+            border-color: $color-blue;
+            width: 440px;
+        }
+        input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+        }
+        &__form-input-checkbox {
+            margin-top: 40px;
+            width: 440px;
+        }
+        /* input */
+        &__form-input-checkbox > div {
+            font-family: "Open Sans";
+            font-weight: 400;
+            font-size: 12px;
+            margin: 0 0 0 35px;
+            position: relative;
+            top: -33px;
+        }
+        &__form-btn {
+            position: relative;
+            left: 220px;
+            bottom: 0;
+            top: -25px;
+            right: 10px;
+            background: #3498db;
+            border-radius: 35px;
+            box-shadow: 1px 2px 6px $color-blue;
+            border: 0px;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 20px 90px 20px 90px;
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+@media (min-width: $xtra-large) {
+    * {
+    }
+}
