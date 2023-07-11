@@ -656,7 +656,7 @@ body {
 /* FOOTER */
 .footer {
     background-color: white;
-    height: 80px;
+    height: 60px;
     width: 100%;
     box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.15);
     &__logo {
@@ -1166,9 +1166,35 @@ $xtra-large: 1201px;
             outline: none;
         }
     }
-}
-
-@media (min-width: $xtra-large) {
-    * {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 120px;
+        &__logo {
+            width: 230px;
+            padding: 25px 15px 15px 25px;
+        }
+        &__copyright {
+            color: #a5a5a5;
+            font-family: "Open Sans";
+            font-weight: 400;
+            font-size: 11px;
+            position: relative;
+            top: -20px;
+            left: 30px;
+        }
+        &__right-section {
+            position: initial;
+            bottom: 0px;
+            left: 0px;
+            padding-right: 25px;
+        }
+        &__right-section > i {
+            position: initial;
+            bottom: 0;
+            left: 0;
+            margin-left: 20px;
+        }
     }
 }

@@ -590,7 +590,7 @@ body {
 /* FOOTER */
 .footer {
   background-color: white;
-  height: 80px;
+  height: 60px;
   width: 100%;
   box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.15);
 }
@@ -1084,5 +1084,36 @@ Common breakpoints:
     padding: 20px 90px 20px 90px;
     text-decoration: none;
     outline: none;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+  }
+  .footer__logo {
+    width: 230px;
+    padding: 25px 15px 15px 25px;
+  }
+  .footer__copyright {
+    color: #a5a5a5;
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 11px;
+    position: relative;
+    top: -20px;
+    left: 30px;
+  }
+  .footer__right-section {
+    position: initial;
+    bottom: 0px;
+    left: 0px;
+    padding-right: 25px;
+  }
+  .footer__right-section > i {
+    position: initial;
+    bottom: 0;
+    left: 0;
+    margin-left: 20px;
   }
 }
