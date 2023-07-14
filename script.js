@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // when we scroll this event starts running
         window.addEventListener("scroll", function () {
             // the percertaje of the scroll is 10 or higer we will add to the HTML the "active" class if it's smoller than 10 it will remove "active" class if exist
-            if (window.Math.round(porcen) > 85) {
+            if (window.Math.round(porcen) > 99) {
                 // var activateButton = setTimeout(() => {
                 //     botonTop.classList.add("active")
                 // }, 200)
