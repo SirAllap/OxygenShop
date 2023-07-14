@@ -42,7 +42,7 @@ html {
     height: 70px;
     width: 100%;
     box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
-    position: absolute;
+    position: fixed;
     transition: 0.5s;
     &__logo {
         width: 230px;
@@ -66,19 +66,39 @@ html {
     }
     &__menu-text {
         font-size: 11px;
-        margin: 15px 0 0 20px;
+        margin: 15px 0 0 30px;
         letter-spacing: 3px;
         padding-left: 10px;
         opacity: 1;
+        text-decoration: none;
     }
-    &__menu-text > p:first-child {
-        padding-top: 0px;
-        font-weight: 700;
-        color: black;
-    }
-    &__menu-text > p {
-        padding-top: 10px;
+    a:link {
+        text-decoration: none;
         color: #a5a5a5;
+        transition: 0.5s;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #a5a5a5;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #000000;
+    }
+    // &__menu-text > a:first-child {
+    //     padding-top: 0px;
+    //     font-weight: 700;
+    //     color: black;
+    // }
+    &__menu-text-link {
+        padding: 30px 0 0 0;
     }
     &__menu-normal {
         display: none;
@@ -90,15 +110,12 @@ html {
 #open:target {
     ~ .header {
         height: 220px;
-
         .header__burger-icon {
             display: none;
         }
-
         .header__close-burger {
             display: block;
         }
-
         .header__menu-text {
             animation: header__menu-text 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
         }
@@ -835,15 +852,15 @@ $xtra-large: 1201px;
         &__menu-text-vertical {
             display: inherit;
         }
-        &__menu-text-vertical > p {
+        &__menu-text-vertical > a {
             margin-right: 5vw;
             font-weight: 700;
             font-size: 11px;
             color: #a5a5a5;
         }
-        &__menu-text-vertical > p:first-child {
-            color: #000000;
-        }
+        // &__menu-text-vertical > a:first-child {
+        //     color: #000000;
+        // }
     }
     .screen1 {
         &__btn {

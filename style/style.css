@@ -39,7 +39,7 @@ html {
   height: 70px;
   width: 100%;
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
-  position: absolute;
+  position: fixed;
   transition: 0.5s;
 }
 .header__logo {
@@ -64,19 +64,31 @@ html {
 }
 .header__menu-text {
   font-size: 11px;
-  margin: 15px 0 0 20px;
+  margin: 15px 0 0 30px;
   letter-spacing: 3px;
   padding-left: 10px;
   opacity: 1;
+  text-decoration: none;
 }
-.header__menu-text > p:first-child {
-  padding-top: 0px;
-  font-weight: 700;
-  color: black;
-}
-.header__menu-text > p {
-  padding-top: 10px;
+.header a:link {
+  text-decoration: none;
   color: #a5a5a5;
+  transition: 0.5s;
+}
+.header a:visited {
+  text-decoration: none;
+  color: #a5a5a5;
+}
+.header a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.header a:active {
+  text-decoration: none;
+  color: #000000;
+}
+.header__menu-text-link {
+  padding: 30px 0 0 0;
 }
 .header__menu-normal {
   display: none;
@@ -757,14 +769,11 @@ Common breakpoints:
   .header__menu-text-vertical {
     display: inherit;
   }
-  .header__menu-text-vertical > p {
+  .header__menu-text-vertical > a {
     margin-right: 5vw;
     font-weight: 700;
     font-size: 11px;
     color: #a5a5a5;
-  }
-  .header__menu-text-vertical > p:first-child {
-    color: #000000;
   }
   .screen1__btn {
     background: #08a6e4;

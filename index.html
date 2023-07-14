@@ -20,9 +20,9 @@
     <header class="header">
       <nav class="header__menu-mobile">
         <img
-          class="header__logo"
-          src="./assets/OxygenShop.png"
-          alt="header company logo"
+        class="header__logo"
+        src="./assets/OxygenShop.png"
+        alt="header company logo"
         />
         <a href="#open">
           <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
@@ -32,10 +32,16 @@
             <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
           </a>
           <div class="header__menu-text">
-            <p>WHY US</p>
-            <p>BENEFITS</p>
-            <p>PRICES</p>
-            <p>CONTACT</p>
+            <a href="#whyus">WHY US</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#benefits">BENEFITS</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#pricing">PRICES</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#info-form">CONTACT</a>
           </div>
         </nav>
       </nav>
@@ -47,10 +53,18 @@
         />
         <div class="header__menu-text-vertical">
           <!-- <hr class="header__menu-text-vertical-line" /> -->
-          <p>WHY US</p>
-          <p>BENEFITS</p>
-          <p>PRICES</p>
-          <p>CONTACT</p>
+          <div class="header__menu-text">
+            <a href="#whyus">WHY US</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#benefits">BENEFITS</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#pricing">PRICES</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#info-form">CONTACT</a>
+          </div>
         </div>
       </nav>
     </header>
@@ -58,7 +72,8 @@
 
     <!-- screen1 -->
     <div class="screen1">
-      <h1 class="screen1__h1-text">Sell More!</h1>
+      <a id="whyus"></a>
+      <h1 class="screen1__h1-text">Sell More!</h1></a>
       <p class="screen1__p-text">
         Open shop on our platform and increase your sales
       </p>
@@ -85,7 +100,7 @@
     <!-- screen1 -->
 
     <!-- screen2 -->
-    <div class="screen2">
+    <div id="benefits" class="screen2">
       <main class="screen2__card1">
         <section class="screen2__img-section">
           <img src="./assets/beAlwaysFirst.png" alt="be always first" />
@@ -135,7 +150,7 @@
     <!-- screen2 -->
 
     <!-- screen3 -->
-    <div class="screen3">
+    <div id="pricing" class="screen3">
       <h1 class="screen3__pricing-titel">Pricing</h1>
       <section class="screen3__pricing-section">
         <article class="screen3__pricing-card">
@@ -249,7 +264,7 @@
             </div>
           </div>
         </article>
-        <article class="screen3__form">
+        <article id="info-form" class="screen3__form">
           <p>NAME</p>
           <input type="text" name="" id="" />
           <p>EMAIL</p>
