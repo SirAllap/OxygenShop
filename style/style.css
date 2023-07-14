@@ -603,7 +603,7 @@ html {
 }
 .screen3__form-btn {
   position: relative;
-  left: calc(75% - 100px);
+  left: calc(70% - 100px);
   width: 200;
   bottom: 30px;
   background: #3498db;
@@ -704,11 +704,16 @@ html {
   top: -20px;
   left: 30px;
 }
-.footer__right-section > i {
+.footer__right-section {
+  display: flex;
   position: relative;
   bottom: 60px;
-  left: calc(80% - 5px);
+  width: 50px;
+  right: -75vw;
   margin-left: 10px;
+}
+.footer__right-section > a:last-child {
+  margin-left: 15px;
 }
 
 /* FOOTER */
@@ -749,12 +754,12 @@ Common breakpoints:
     outline: none;
     transition: 0.5s;
   }
-  .footer__right-section > i {
+  .footer__right-section {
     position: relative;
     bottom: 60px;
-    left: 80vw;
+    width: 50px;
+    right: calc(-85vw - 20px);
     margin-left: 10px;
-    transition: 0.5s;
   }
 }
 @media (min-width: 1025px) {
@@ -765,6 +770,9 @@ Common breakpoints:
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+  .header__menu-text {
+    margin: 0px 0 0 30px;
   }
   .header__menu-text-vertical {
     display: inherit;
@@ -1203,11 +1211,9 @@ Common breakpoints:
     bottom: 0px;
     left: 0px;
     padding-right: 25px;
-  }
-  .footer__right-section > i {
-    position: initial;
-    bottom: 0;
-    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
     margin-left: 20px;
   }
 }

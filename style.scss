@@ -671,7 +671,7 @@ html {
 
     &__form-btn {
         position: relative;
-        left: calc(75% - 100px);
+        left: calc(70% - 100px);
         width: 200;
         bottom: 30px;
         background: #3498db;
@@ -774,11 +774,16 @@ html {
         top: -20px;
         left: 30px;
     }
-    &__right-section > i {
+    &__right-section {
+        display: flex;
         position: relative;
         bottom: 60px;
-        left: calc(80% - 5px);
+        width: 50px;
+        right: calc(-75vw);
         margin-left: 10px;
+    }
+    &__right-section > a:last-child {
+        margin-left: 15px;
     }
 }
 /* FOOTER */
@@ -830,12 +835,12 @@ $xtra-large: 1201px;
         outline: none;
         transition: 0.5s;
     }
-    .footer__right-section > i {
+    .footer__right-section {
         position: relative;
         bottom: 60px;
-        left: 80vw;
+        width: 50px;
+        right: calc(-85vw - 20px);
         margin-left: 10px;
-        transition: 0.5s;
     }
 }
 
@@ -848,6 +853,9 @@ $xtra-large: 1201px;
             display: flex;
             justify-content: space-around;
             align-items: center;
+        }
+        &__menu-text {
+            margin: 0px 0 0 30px;
         }
         &__menu-text-vertical {
             display: inherit;
@@ -1291,11 +1299,9 @@ $xtra-large: 1201px;
             bottom: 0px;
             left: 0px;
             padding-right: 25px;
-        }
-        &__right-section > i {
-            position: initial;
-            bottom: 0;
-            left: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
             margin-left: 20px;
         }
     }
