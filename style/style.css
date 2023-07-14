@@ -13,6 +13,21 @@ body {
   overflow-x: hidden;
 }
 
+/*Barra progreso*/
+.barra-progreso {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.porcentaje-barra {
+  color: #55dfb4;
+  height: 10px;
+  width: 0%;
+  background-color: rgba(251, 59, 101, 0.4392156863);
+}
+
+/*Barra progreso*/
 /* HEADER */
 .header {
   background-color: white;
