@@ -287,7 +287,7 @@ html {
   font-family: "Raleway", sans-serif;
   font-size: 36px;
   font-weight: 400;
-  padding: 0 0 15px 0;
+  padding: 0 0 25px 0;
   text-align: center;
 }
 .screen3__pricing-card {
@@ -301,21 +301,15 @@ html {
 .screen3__pricing-card:hover {
   border: 1px solid #fb3b64;
   border-radius: 18px;
-  width: 340px;
+  transform: scale(1.1);
   margin: auto;
-  height: 290px;
   box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
 }
 .screen3__pricing-card-left {
   transition: 0.5s;
   position: relative;
-  left: 50px;
+  left: 70px;
   top: 70px;
-}
-.screen3__pricing-card:hover .screen3__pricing-card-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card-left > p {
   font-family: "Raleway", sans-serif;
@@ -334,14 +328,6 @@ html {
   position: relative;
   left: 150px;
   bottom: 90px;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 14px;
-}
-.screen3__pricing-card:hover .screen3__pricing-card-right {
-  position: relative;
-  left: 150px;
-  bottom: 70px;
   font-family: "Open Sans";
   font-weight: 400;
   font-size: 14px;
@@ -366,8 +352,8 @@ html {
 }
 .screen3__pricing-card:hover .screen3__pricing-card-btn1 {
   position: relative;
-  bottom: 50px;
-  left: 90px;
+  bottom: 70px;
+  left: 75px;
   background: #fb3b64;
   border-radius: 35px;
   border: 0px;
@@ -390,9 +376,8 @@ html {
 .screen3__pricing-card2:hover {
   border: 1px solid #08a6e4;
   border-radius: 18px;
-  width: 340px;
+  transform: scale(1.1);
   margin: auto;
-  height: 290px;
   margin-top: 60px;
   box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
 }
@@ -401,11 +386,6 @@ html {
   position: relative;
   left: 50px;
   top: 70px;
-}
-.screen3__pricing-card2:hover .screen3__pricing-card2-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card2-left > p:first-child {
   position: inherit;
@@ -445,8 +425,8 @@ html {
 }
 .screen3__pricing-card2:hover .screen3__pricing-card-btn2 {
   position: relative;
-  bottom: 60px;
-  left: 90px;
+  bottom: 82px;
+  left: 75px;
   background: #08a6e4;
   border-radius: 35px;
   border: 0px;
@@ -469,9 +449,8 @@ html {
 .screen3__pricing-card3:hover {
   border: 1px solid #55dfb4;
   border-radius: 18px;
-  width: 340px;
   margin: auto;
-  height: 290px;
+  transform: scale(1.1);
   margin-top: 60px;
   box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
 }
@@ -480,11 +459,6 @@ html {
   position: relative;
   left: 50px;
   top: 70px;
-}
-.screen3__pricing-card3:hover .screen3__pricing-card3-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card3-left > p:first-child {
   position: inherit;
@@ -524,8 +498,8 @@ html {
 }
 .screen3__pricing-card3:hover .screen3__pricing-card-btn3 {
   position: relative;
-  bottom: 65px;
-  left: 90px;
+  bottom: 83px;
+  left: 75px;
   background: #55dfb4;
   border-radius: 35px;
   border: 0px;
@@ -987,10 +961,9 @@ Common breakpoints:
   .screen3__pricing-card:hover {
     border: 1px solid #fb3b64;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
   }
   .screen3__pricing-card:hover .screen3__pricing-card-left {
@@ -1035,10 +1008,9 @@ Common breakpoints:
   .screen3__pricing-card2:hover {
     border: 1px solid #08a6e4;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
   }
   .screen3__pricing-card2:hover .screen3__pricing-card2-left {
@@ -1083,10 +1055,9 @@ Common breakpoints:
   .screen3__pricing-card3:hover {
     border: 1px solid #55dfb4;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
   }
   .screen3__pricing-card3:hover .screen3__pricing-card3-left {

@@ -304,7 +304,7 @@ html {
         font-family: "Raleway", sans-serif;
         font-size: 36px;
         font-weight: 400;
-        padding: 0 0 15px 0;
+        padding: 0 0 25px 0;
         text-align: center;
     }
     /* card1 */
@@ -320,24 +320,23 @@ html {
     &__pricing-card:hover {
         border: 1px solid $color-red;
         border-radius: 18px;
-        width: 340px;
+        transform: scale(1.1);
         margin: auto;
-        height: 290px;
         box-shadow: 14px 18px 30px -20px #fb3b659a;
     }
 
     &__pricing-card-left {
         transition: 0.5s;
         position: relative;
-        left: 50px;
+        left: 70px;
         top: 70px;
     }
 
-    &__pricing-card:hover .screen3__pricing-card-left {
-        position: relative;
-        left: 60px;
-        top: 80px;
-    }
+    // &__pricing-card:hover .screen3__pricing-card-left {
+    //     position: relative;
+    //     left: 70px;
+    //     top: 80px;
+    // }
 
     &__pricing-card-left > p {
         font-family: "Raleway", sans-serif;
@@ -363,14 +362,14 @@ html {
         font-size: 14px;
     }
 
-    &__pricing-card:hover .screen3__pricing-card-right {
-        position: relative;
-        left: 150px;
-        bottom: 70px;
-        font-family: "Open Sans";
-        font-weight: 400;
-        font-size: 14px;
-    }
+    // &__pricing-card:hover .screen3__pricing-card-right {
+    //     position: relative;
+    //     left: 150px;
+    //     bottom: 70px;
+    //     font-family: "Open Sans";
+    //     font-weight: 400;
+    //     font-size: 14px;
+    // }
 
     &__pricing-card-right > div {
         margin: 20px;
@@ -394,8 +393,8 @@ html {
 
     &__pricing-card:hover .screen3__pricing-card-btn1 {
         position: relative;
-        bottom: 50px;
-        left: 90px;
+        bottom: 70px;
+        left: 75px;
         background: $color-red;
         border-radius: 35px;
         border: 0px;
@@ -422,9 +421,8 @@ html {
     &__pricing-card2:hover {
         border: 1px solid $color-blue;
         border-radius: 18px;
-        width: 340px;
+        transform: scale(1.1);
         margin: auto;
-        height: 290px;
         margin-top: 60px;
         box-shadow: 14px 18px 30px -20px #07abe69a;
     }
@@ -436,11 +434,11 @@ html {
         top: 70px;
     }
 
-    &__pricing-card2:hover .screen3__pricing-card2-left {
-        position: relative;
-        left: 60px;
-        top: 80px;
-    }
+    // &__pricing-card2:hover .screen3__pricing-card2-left {
+    //     position: relative;
+    //     left: 50px;
+    //     top: 80px;
+    // }
 
     &__pricing-card2-left > p:first-child {
         position: inherit;
@@ -484,8 +482,8 @@ html {
 
     &__pricing-card2:hover .screen3__pricing-card-btn2 {
         position: relative;
-        bottom: 60px;
-        left: 90px;
+        bottom: 82px;
+        left: 75px;
         background: $color-blue;
         border-radius: 35px;
         border: 0px;
@@ -512,9 +510,8 @@ html {
     &__pricing-card3:hover {
         border: 1px solid $color-green;
         border-radius: 18px;
-        width: 340px;
         margin: auto;
-        height: 290px;
+        transform: scale(1.1);
         margin-top: 60px;
         box-shadow: 14px 18px 30px -20px #07abe69a;
     }
@@ -526,11 +523,11 @@ html {
         top: 70px;
     }
 
-    &__pricing-card3:hover .screen3__pricing-card3-left {
-        position: relative;
-        left: 60px;
-        top: 80px;
-    }
+    // &__pricing-card3:hover .screen3__pricing-card3-left {
+    //     position: relative;
+    //     left: 60px;
+    //     top: 80px;
+    // }
 
     &__pricing-card3-left > p:first-child {
         position: inherit;
@@ -574,8 +571,8 @@ html {
 
     &__pricing-card3:hover .screen3__pricing-card-btn3 {
         position: relative;
-        bottom: 65px;
-        left: 90px;
+        bottom: 83px;
+        left: 75px;
         background: $color-green;
         border-radius: 35px;
         border: 0px;
@@ -1073,10 +1070,9 @@ $xtra-large: 1201px;
         &__pricing-card:hover {
             border: 1px solid #fb3b64;
             border-radius: 18px;
-            width: 320px;
+            transform: scale(1.2);
             margin: auto;
             margin-top: 60px;
-            height: 440px;
             box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
         }
         &__pricing-card:hover .screen3__pricing-card-left {
@@ -1121,10 +1117,9 @@ $xtra-large: 1201px;
         &__pricing-card2:hover {
             border: 1px solid $color-blue;
             border-radius: 18px;
-            width: 320px;
+            transform: scale(1.2);
             margin: auto;
             margin-top: 60px;
-            height: 440px;
             box-shadow: 14px 18px 30px -20px #07abe69a;
         }
         &__pricing-card2:hover .screen3__pricing-card2-left {
@@ -1169,10 +1164,9 @@ $xtra-large: 1201px;
         &__pricing-card3:hover {
             border: 1px solid $color-green;
             border-radius: 18px;
-            width: 320px;
+            transform: scale(1.2);
             margin: auto;
             margin-top: 60px;
-            height: 440px;
             box-shadow: 14px 18px 30px -20px #07abe69a;
         }
         &__pricing-card3:hover .screen3__pricing-card3-left {
