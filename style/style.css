@@ -13,6 +13,25 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/*Barra progreso*/
+.barra-progreso {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
+.porcentaje-barra {
+  color: #55dfb4;
+  height: 10px;
+  width: 0%;
+  background-color: rgba(251, 59, 101, 0.4392156863);
+}
+
+/*Barra progreso*/
 /* HEADER */
 .header {
   background-color: white;
@@ -20,7 +39,7 @@ body {
   height: 70px;
   width: 100%;
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
-  position: absolute;
+  position: fixed;
   transition: 0.5s;
 }
 .header__logo {
@@ -45,19 +64,31 @@ body {
 }
 .header__menu-text {
   font-size: 11px;
-  margin: 15px 0 0 20px;
+  margin: 15px 0 0 30px;
   letter-spacing: 3px;
   padding-left: 10px;
   opacity: 1;
+  text-decoration: none;
 }
-.header__menu-text > p:first-child {
-  padding-top: 0px;
-  font-weight: 700;
-  color: black;
-}
-.header__menu-text > p {
-  padding-top: 10px;
+.header a:link {
+  text-decoration: none;
   color: #a5a5a5;
+  transition: 0.5s;
+}
+.header a:visited {
+  text-decoration: none;
+  color: #a5a5a5;
+}
+.header a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+.header a:active {
+  text-decoration: none;
+  color: #000000;
+}
+.header__menu-text-link {
+  padding: 30px 0 0 0;
 }
 .header__menu-normal {
   display: none;
@@ -256,7 +287,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 36px;
   font-weight: 400;
-  padding: 0 0 15px 0;
+  padding: 0 0 25px 0;
   text-align: center;
 }
 .screen3__pricing-card {
@@ -270,21 +301,15 @@ body {
 .screen3__pricing-card:hover {
   border: 1px solid #fb3b64;
   border-radius: 18px;
-  width: 340px;
+  transform: scale(1.1);
   margin: auto;
-  height: 290px;
   box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
 }
 .screen3__pricing-card-left {
   transition: 0.5s;
   position: relative;
-  left: 50px;
+  left: 70px;
   top: 70px;
-}
-.screen3__pricing-card:hover .screen3__pricing-card-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card-left > p {
   font-family: "Raleway", sans-serif;
@@ -303,14 +328,6 @@ body {
   position: relative;
   left: 150px;
   bottom: 90px;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 14px;
-}
-.screen3__pricing-card:hover .screen3__pricing-card-right {
-  position: relative;
-  left: 150px;
-  bottom: 70px;
   font-family: "Open Sans";
   font-weight: 400;
   font-size: 14px;
@@ -335,8 +352,8 @@ body {
 }
 .screen3__pricing-card:hover .screen3__pricing-card-btn1 {
   position: relative;
-  bottom: 50px;
-  left: 90px;
+  bottom: 70px;
+  left: 75px;
   background: #fb3b64;
   border-radius: 35px;
   border: 0px;
@@ -359,9 +376,8 @@ body {
 .screen3__pricing-card2:hover {
   border: 1px solid #08a6e4;
   border-radius: 18px;
-  width: 340px;
+  transform: scale(1.1);
   margin: auto;
-  height: 290px;
   margin-top: 60px;
   box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
 }
@@ -370,11 +386,6 @@ body {
   position: relative;
   left: 50px;
   top: 70px;
-}
-.screen3__pricing-card2:hover .screen3__pricing-card2-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card2-left > p:first-child {
   position: inherit;
@@ -414,8 +425,8 @@ body {
 }
 .screen3__pricing-card2:hover .screen3__pricing-card-btn2 {
   position: relative;
-  bottom: 60px;
-  left: 90px;
+  bottom: 82px;
+  left: 75px;
   background: #08a6e4;
   border-radius: 35px;
   border: 0px;
@@ -438,9 +449,8 @@ body {
 .screen3__pricing-card3:hover {
   border: 1px solid #55dfb4;
   border-radius: 18px;
-  width: 340px;
   margin: auto;
-  height: 290px;
+  transform: scale(1.1);
   margin-top: 60px;
   box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
 }
@@ -449,11 +459,6 @@ body {
   position: relative;
   left: 50px;
   top: 70px;
-}
-.screen3__pricing-card3:hover .screen3__pricing-card3-left {
-  position: relative;
-  left: 60px;
-  top: 80px;
 }
 .screen3__pricing-card3-left > p:first-child {
   position: inherit;
@@ -493,8 +498,8 @@ body {
 }
 .screen3__pricing-card3:hover .screen3__pricing-card-btn3 {
   position: relative;
-  bottom: 65px;
-  left: 90px;
+  bottom: 83px;
+  left: 75px;
   background: #55dfb4;
   border-radius: 35px;
   border: 0px;
@@ -535,8 +540,7 @@ body {
 .screen3__form {
   margin-top: 30px;
 }
-.screen3__form p {
-  padding: 10px 0 10px 0;
+.screen3__form label {
   font-family: "Open Sans";
   font-weight: 600;
   font-size: 11px;
@@ -544,12 +548,34 @@ body {
   color: #08a6e4;
 }
 .screen3 input[type=text] {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 2px;
   outline: 0;
   border-width: 0 0 1px;
   border-color: #95989a;
   width: 100%;
+  padding: 25px 0 10px 0;
 }
 .screen3 input[type=text]:hover {
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #08a6e4;
+  width: 100%;
+}
+.screen3 input[type=email] {
+  font-family: "Open Sans";
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 2px;
+  outline: 0;
+  border-width: 0 0 1px;
+  border-color: #95989a;
+  width: 100%;
+  padding: 25px 0 10px 0;
+}
+.screen3 input[type=email]:hover {
   outline: 0;
   border-width: 0 0 1px;
   border-color: #08a6e4;
@@ -572,7 +598,8 @@ body {
 }
 .screen3__form-btn {
   position: relative;
-  left: 30vw;
+  left: calc(70% - 100px);
+  width: 200;
   bottom: 30px;
   background: #3498db;
   border-radius: 35px;
@@ -587,6 +614,71 @@ body {
 }
 
 /* SCREEN3 */
+/* Button to top */
+.top {
+  position: fixed;
+  bottom: 110px;
+  right: calc(50% - 125px);
+  font-size: 19px;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  width: 250px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #fb3b64;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  pointer-events: none;
+  transition: all 0.5s;
+  z-index: 100;
+}
+
+.top.active {
+  bottom: 120px;
+  pointer-events: auto;
+  opacity: 0.9;
+  animation: top 1.1s both;
+}
+
+@keyframes top {
+  0% {
+    transform: scale(0);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+    opacity: 0.9;
+  }
+  55% {
+    transform: scale(0.7);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: scale(0.84);
+    animation-timing-function: ease-in;
+  }
+  89% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: scale(0.95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+/* Button to top */
 /* FOOTER */
 .footer {
   background-color: white;
@@ -607,11 +699,16 @@ body {
   top: -20px;
   left: 30px;
 }
-.footer__right-section > i {
+.footer__right-section {
+  display: flex;
   position: relative;
   bottom: 60px;
-  left: 70vw;
+  width: 50px;
+  right: -75vw;
   margin-left: 10px;
+}
+.footer__right-section > a:last-child {
+  margin-left: 15px;
 }
 
 /* FOOTER */
@@ -652,12 +749,12 @@ Common breakpoints:
     outline: none;
     transition: 0.5s;
   }
-  .footer__right-section > i {
+  .footer__right-section {
     position: relative;
     bottom: 60px;
-    left: 80vw;
+    width: 50px;
+    right: calc(-85vw - 20px);
     margin-left: 10px;
-    transition: 0.5s;
   }
 }
 @media (min-width: 1025px) {
@@ -669,17 +766,17 @@ Common breakpoints:
     justify-content: space-around;
     align-items: center;
   }
+  .header__menu-text {
+    margin: 0px 0 0 30px;
+  }
   .header__menu-text-vertical {
     display: inherit;
   }
-  .header__menu-text-vertical > p {
+  .header__menu-text-vertical > a {
     margin-right: 5vw;
     font-weight: 700;
     font-size: 11px;
     color: #a5a5a5;
-  }
-  .header__menu-text-vertical > p:first-child {
-    color: #000000;
   }
   .screen1__btn {
     background: #08a6e4;
@@ -885,10 +982,9 @@ Common breakpoints:
   .screen3__pricing-card:hover {
     border: 1px solid #fb3b64;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(251, 59, 101, 0.6039215686);
   }
   .screen3__pricing-card:hover .screen3__pricing-card-left {
@@ -933,10 +1029,9 @@ Common breakpoints:
   .screen3__pricing-card2:hover {
     border: 1px solid #08a6e4;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
   }
   .screen3__pricing-card2:hover .screen3__pricing-card2-left {
@@ -981,10 +1076,9 @@ Common breakpoints:
   .screen3__pricing-card3:hover {
     border: 1px solid #55dfb4;
     border-radius: 18px;
-    width: 320px;
+    transform: scale(1.2);
     margin: auto;
     margin-top: 60px;
-    height: 440px;
     box-shadow: 14px 18px 30px -20px rgba(7, 171, 230, 0.6039215686);
   }
   .screen3__pricing-card3:hover .screen3__pricing-card3-left {
@@ -1109,11 +1203,9 @@ Common breakpoints:
     bottom: 0px;
     left: 0px;
     padding-right: 25px;
-  }
-  .footer__right-section > i {
-    position: initial;
-    bottom: 0;
-    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
     margin-left: 20px;
   }
 }

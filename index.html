@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" type="image/png" href="./assets/favico_oxygen_academy.png"/>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,14 +12,21 @@
 
   <body>
     <!-- header -->
+    <div class="barra-progreso">
+      <div class="porcentaje-barra">
+        <span style="color: transparent">0</span>
+      </div>
+    </div>
     <span id="open"></span>
     <header class="header">
       <nav class="header__menu-mobile">
+        <a href=".">
         <img
-          class="header__logo"
-          src="./assets/OxygenShop.png"
-          alt="header company logo"
+        class="header__logo"
+        src="./assets/OxygenShop.png"
+        alt="header company logo"
         />
+        </a>
         <a href="#open">
           <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
         </a>
@@ -27,25 +35,41 @@
             <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
           </a>
           <div class="header__menu-text">
-            <p>WHY US</p>
-            <p>BENEFITS</p>
-            <p>PRICES</p>
-            <p>CONTACT</p>
+            <a href="#whyus">WHY US</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#benefits">BENEFITS</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#pricing">PRICES</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#info-form">CONTACT</a>
           </div>
         </nav>
       </nav>
       <nav class="header__menu-normal">
+        <a href=".">
         <img
-          class="header__logo"
-          src="./assets/Oxygen Shop.png"
-          alt="header company logo"
+        class="header__logo"
+        src="./assets/OxygenShop.png"
+        alt="header company logo"
         />
+        </a>
         <div class="header__menu-text-vertical">
           <!-- <hr class="header__menu-text-vertical-line" /> -->
-          <p>WHY US</p>
-          <p>BENEFITS</p>
-          <p>PRICES</p>
-          <p>CONTACT</p>
+          <div class="header__menu-text">
+            <a href="#whyus">WHY US</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#benefits">BENEFITS</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#pricing">PRICES</a>
+          </div>
+          <div class="header__menu-text">
+            <a href="#info-form">CONTACT</a>
+          </div>
         </div>
       </nav>
     </header>
@@ -53,7 +77,8 @@
 
     <!-- screen1 -->
     <div class="screen1">
-      <h1 class="screen1__h1-text">Sell More!</h1>
+      <a id="whyus"></a>
+      <h1 class="screen1__h1-text">Sell More!</h1></a>
       <p class="screen1__p-text">
         Open shop on our platform and increase your sales
       </p>
@@ -80,7 +105,7 @@
     <!-- screen1 -->
 
     <!-- screen2 -->
-    <div class="screen2">
+    <div id="benefits" class="screen2">
       <main class="screen2__card1">
         <section class="screen2__img-section">
           <img src="./assets/beAlwaysFirst.png" alt="be always first" />
@@ -130,7 +155,7 @@
     <!-- screen2 -->
 
     <!-- screen3 -->
-    <div class="screen3">
+    <div id="pricing" class="screen3">
       <h1 class="screen3__pricing-titel">Pricing</h1>
       <section class="screen3__pricing-section">
         <article class="screen3__pricing-card">
@@ -244,7 +269,28 @@
             </div>
           </div>
         </article>
-        <article class="screen3__form">
+        <form id="info-form" class="screen3__form">      
+          <label for='form-name'>NAME</label><br>
+          <input type="text" name="form-name" id="form-name" required/><br><br>
+          <label for='form-email'>EMAIL</label><br>
+          <input type="email" name="form-email" id="form-email" required/>
+          <br />
+          <div class="screen3__form-input-checkbox">
+            <input type="checkbox" name="" id="" required/>
+            <div>
+              I hereby give consent for my personal data included in my
+              application to be processed for the purposes of the recruitment
+              process under the European Parliament’s and Council of the
+              European Union Regulation on the Protection of Natural Persons as
+              of 27 April 2016, with regard to the processing of personal data
+              and on the free movement of such data, and repealing Directive
+              95/46/EC (Data Protection Directive)
+            </div>
+          </div>
+          <br />
+          <button class="screen3__form-btn">send</button>
+        </form>
+        <!-- <article id="info-form" class="screen3__form">      
           <p>NAME</p>
           <input type="text" name="" id="" />
           <p>EMAIL</p>
@@ -264,31 +310,39 @@
           </div>
           <br />
           <button class="screen3__form-btn">send</button>
-        </article>
+        </article> -->
       </section>
     </div>
+    <a href="#" class="top">
+      <i class="fa-solid fa-arrow-up-long"></i>
+      &nbsp;Return to the top&nbsp;
+      <i class="fa-solid fa-arrow-up-long"></i>
+    </a>
     <footer class="footer">
       <section class="footer__left-section">
+        <a href=".">
         <img
           class="footer__logo"
           src="./assets/OxygenShop.png"
           alt="header company logo"
         />
+        </a>
         <p class="footer__copyright">© 2022 OXYGEN, All Rights Reserved</p>
       </section>
       <section class="footer__right-section">
-        <i
+          <a href="https://www.twitter.com" target='_blank'><i
           class="fa-brands fa-square-twitter fa-2xl"
           style="color: #55acee"
-        ></i>
-        <i
+        ></i></a>
+          <a href="https://www.facebook.com" target='_blank'><i
           class="fa-brands fa-square-facebook fa-2xl"
           style="color: #3b5998"
-        ></i>
+        ></i></a>
       </section>
     </footer>
     <!-- screen3 -->
   </body>
+  <script src="script.js"></script>
   <script
     src="https://kit.fontawesome.com/76192069aa.js"
     crossorigin="anonymous"
