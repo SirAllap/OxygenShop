@@ -1,0 +1,63 @@
+/* Button to top */
+.top {
+    position: fixed;
+    bottom: 110px;
+    right: calc(50% - 125px);
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $color-red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    pointer-events: none;
+    transition: all 0.5s;
+    z-index: 100;
+}
+.top.active {
+    bottom: 120px;
+    pointer-events: auto;
+    opacity: 0.9;
+    animation: top 1.1s both;
+}
+@keyframes top {
+    0% {
+        transform: scale(0);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+    38% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+        opacity: 0.9;
+    }
+    55% {
+        transform: scale(0.7);
+        animation-timing-function: ease-in;
+    }
+    72% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    81% {
+        transform: scale(0.84);
+        animation-timing-function: ease-in;
+    }
+    89% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    95% {
+        transform: scale(0.95);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+}
+/* Button to top */

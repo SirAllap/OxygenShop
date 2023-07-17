@@ -1,0 +1,40 @@
+@import "../utils/mixins";
+
+/* FOOTER */
+.footer {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0px -6px 6px 0px rgba(0, 0, 0, 0.15);
+    &__logo {
+        width: 230px;
+        padding: 30px 15px 15px 25px;
+    }
+    &__copyright {
+        color: #a5a5a5;
+        font-family: "Open Sans";
+        font-weight: 400;
+        font-size: 11px;
+        position: relative;
+        top: -20px;
+        left: 30px;
+    }
+    &__right-section {
+        display: flex;
+        position: relative;
+        bottom: 60px;
+        width: 50px;
+        right: -75vw;
+        margin-left: 10px;
+    }
+    &__right-section > a:last-child {
+        margin-left: 15px;
+    }
+    @include sm {
+        &__right-section {
+            position: relative;
+            right: calc(-75vw - 15px);
+        }
+    }
+}
+/* FOOTER */

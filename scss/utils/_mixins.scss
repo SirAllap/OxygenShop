@@ -1,0 +1,28 @@
+/* 
+Common breakpoints:
+- 320px — 480px: Mobile devices
+- 481px — 768px: iPads, Tablets
+- 769px — 1024px: Small screens, laptops
+- 1025px — 1200px: Desktops, large screens
+- 1201px and more —  Extra large screens, TV
+*/
+
+/* Screen media variables */
+// $medium: 480px;
+// $medium-plus: 720px;
+// $large: 960px;
+// $xtra-large: 1200px;
+
+$breakpoints: (
+    "xs": 0,
+    "sm": 480px,
+    "md": 720px,
+    "lg": 960px,
+    "xl": 1200px
+);
+
+@mixin sm {
+    @media (min-width: map-get($breakpoints, "sm")) {
+        @content;
+    }
+}

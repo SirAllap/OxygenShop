@@ -1,0 +1,13 @@
+/*Barra progreso*/
+.barra-progreso {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+.porcentaje-barra {
+    color: #55dfb4;
+    height: 10px;
+    width: 0%;
+    background-color: #fb3b6570;
+}
+/*Barra progreso*/

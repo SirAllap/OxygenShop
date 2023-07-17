@@ -1,0 +1,114 @@
+@import "../utils/mixins";
+
+/* SCREEN2 */
+.screen2 {
+    margin-top: 80px;
+    padding: 40px 25px 40px 25px;
+    background-color: #f7f7f7;
+    text-align: center;
+    transition: 0.5s;
+    @include sm {
+        padding: 40px 10vw 40px 10vw;
+    }
+    /* card1 */
+    &__card1 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        height: auto;
+    }
+
+    &__img-section > img {
+        padding: 10px 34px 10px 34px;
+        width: 80%;
+        text-align: center;
+    }
+
+    &__card1-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 0px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card1-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card1-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-red;
+    }
+    /* card1 */
+
+    /* card2 */
+    &__card2 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        margin-top: 40px;
+        height: auto;
+    }
+
+    &__card2-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 0px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card2-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card2-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-blue;
+    }
+    /* card2 */
+
+    /* card3 */
+    &__card3 {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #e8e9ed;
+        margin: 40px 0 0 0;
+        height: auto;
+    }
+
+    &__card3-text-section > h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        padding: 30px 20% 20px 20px;
+        text-align: left;
+    }
+
+    &__card3-text-section > p {
+        padding: 20px 20px 35px 20px;
+        text-align: left;
+    }
+
+    &__card3-line-section {
+        display: none;
+        height: 4px;
+        border: 0;
+        background: $color-green;
+    }
+
+    &__card3-img-section img {
+        border-radius: 5px;
+        width: 100%;
+        background-color: #55dfb4;
+    }
+    /* card 3 */
+}
+/* SCREEN2 */

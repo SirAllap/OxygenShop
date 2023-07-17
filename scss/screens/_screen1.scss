@@ -1,0 +1,55 @@
+@import "../utils/mixins";
+
+/* SCREEN1 */
+.screen1 {
+    padding-top: 150px;
+    text-align: center;
+    &__h1-text {
+        font-size: 35px;
+        font-weight: 400;
+        font-family: "Raleway", sans-serif;
+    }
+    &__p-text {
+        padding: 30px 45px 55px 45px;
+    }
+    &__btn {
+        background: $color-blue;
+        border-radius: 35px;
+        box-shadow: 1px 2px 6px #07ace6;
+        border: 0px;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 25px 90px 25px 90px;
+        text-decoration: none;
+        outline: none;
+    }
+    &__img {
+        width: 100vw;
+        padding-top: 20%;
+    }
+    @include sm {
+        &__img {
+            transition: 0.5s;
+            padding-top: 5vw;
+        }
+    }
+    &__under-laptop-text {
+        font-size: 35px;
+        font-weight: 300;
+        padding: 20px 40px 20px 40px;
+        font-family: "Raleway", sans-serif;
+    }
+    &__info-box > img {
+        width: 210px;
+        padding-top: 10%;
+    }
+    &__info-box > p {
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 100;
+        color: gray;
+        padding: 0 100px 0 100px;
+    }
+}
+/* SCREEN1 */

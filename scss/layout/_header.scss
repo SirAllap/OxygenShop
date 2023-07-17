@@ -1,0 +1,102 @@
+/* HEADER */
+.header {
+    background-color: white;
+    z-index: 2;
+    height: 70px;
+    width: 100%;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
+    position: fixed;
+    transition: 0.5s;
+    &__logo {
+        width: 230px;
+        padding: 20px 15px 15px 25px;
+    }
+    &__burger-icon {
+        color: $color-blue;
+        position: absolute;
+        right: 35px;
+        top: 35px;
+        cursor: pointer;
+    }
+    &__close-burger {
+        display: none;
+    }
+    &__close-icon {
+        color: $color-blue;
+        position: absolute;
+        right: 35px;
+        top: 35px;
+    }
+    &__menu-text {
+        font-size: 11px;
+        margin: 15px 0 0 30px;
+        letter-spacing: 3px;
+        padding-left: 10px;
+        opacity: 1;
+        text-decoration: none;
+    }
+    a:link {
+        text-decoration: none;
+        color: #a5a5a5;
+        transition: 0.5s;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #a5a5a5;
+    }
+
+    a:hover {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #000000;
+    }
+    // &__menu-text > a:first-child {
+    //     padding-top: 0px;
+    //     font-weight: 700;
+    //     color: black;
+    // }
+    &__menu-text-link {
+        padding: 30px 0 0 0;
+    }
+    &__menu-normal {
+        display: none;
+    }
+}
+/* HEADER */
+
+/* BURGER MENU */
+#open:target {
+    ~ .header {
+        height: 220px;
+        .header__burger-icon {
+            display: none;
+        }
+        .header__close-burger {
+            display: block;
+        }
+        .header__menu-text {
+            animation: header__menu-text 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        }
+    }
+}
+
+@keyframes header__menu-text {
+    0% {
+        filter: blur(1px);
+        opacity: 0;
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+#close:target ~ .header {
+    height: 70px;
+}
+/* BURGER MENU */
