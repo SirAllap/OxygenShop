@@ -65,17 +65,23 @@ html {
         top: 35px;
     }
     &__menu-text {
+        transition: all 0.5s;
         font-size: 11px;
         margin: 15px 0 0 30px;
         letter-spacing: 3px;
-        padding-left: 10px;
         opacity: 1;
         text-decoration: none;
     }
+    &__menu-text:hover {
+        transform: translateY(-3px);
+    }
+    &__menu-text > a {
+        padding: 20px 10px 20px 0;
+    }
     a:link {
+        transition: 0.5s;
         text-decoration: none;
         color: #a5a5a5;
-        transition: 0.5s;
     }
 
     a:visited {
@@ -84,8 +90,10 @@ html {
     }
 
     a:hover {
+        transition: all 0.5s;
         text-decoration: none;
         color: #000000;
+        font-weight: 700;
     }
 
     a:active {
@@ -153,7 +161,12 @@ html {
     &__btn {
         background: $color-blue;
         border-radius: 35px;
-        box-shadow: 1px 2px 6px #07ace6;
+        box-shadow:
+            #07ace65d 0px 2px 1px,
+            #07ace65d 0px 4px 2px,
+            #07ace65d 0px 8px 4px,
+            #07ace65d 0px 16px 8px,
+            #07ace65d 0px 32px 16px;
         border: 0px;
         color: #ffffff;
         font-size: 16px;
@@ -161,6 +174,25 @@ html {
         padding: 25px 90px 25px 90px;
         text-decoration: none;
         outline: none;
+        transition: 0.5s;
+    }
+    &__btn:hover {
+        box-shadow:
+            #07ace61d 0px 2px 1px,
+            #07ace61d 0px 4px 2px,
+            #07ace61d 0px 8px 4px,
+            #07ace61d 0px 16px 8px,
+            #07ace61d 0px 32px 16px;
+        border: 0px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        outline: none;
+        transition: 0.5s;
+        padding: 25px 115px 25px 115px;
+        transform: translateY(-5px);
+        background-color: #08a6e4b5;
+        color: #fff;
     }
     &__img {
         width: 100vw;
@@ -482,17 +514,25 @@ html {
 
     &__pricing-card2:hover .screen3__pricing-card-btn2 {
         position: relative;
-        bottom: 82px;
-        left: 75px;
-        background: $color-blue;
+        bottom: 96px;
+        left: 70px;
         border-radius: 35px;
-        border: 0px;
-        color: #ffffff;
         font-size: 13px;
         font-weight: 700;
-        padding: 20px 60px 20px 60px;
+        padding: 20px 65px 20px 65px;
         text-decoration: none;
         outline: none;
+        box-shadow:
+            #07ace61d 0px 2px 1px,
+            #07ace61d 0px 4px 2px,
+            #07ace61d 0px 8px 4px,
+            #07ace61d 0px 16px 8px,
+            #07ace61d 0px 32px 16px;
+        transition: 0.4s;
+        transform: translateY(-0px);
+        background-color: #fff;
+        color: #07ace6;
+        border: solid 2px #07abe64a;
     }
     /* card2 */
 
@@ -704,6 +744,23 @@ html {
         text-decoration: none;
         outline: none;
     }
+    &__form-btn:hover {
+        box-shadow:
+            #07ace61d 0px 2px 1px,
+            #07ace61d 0px 4px 2px,
+            #07ace61d 0px 8px 4px,
+            #07ace61d 0px 16px 8px,
+            #07ace61d 0px 32px 16px;
+        border: 0px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        outline: none;
+        transition: 0.5s;
+        transform: translateY(-5px);
+        background-color: #08a6e4b5;
+        color: #fff;
+    }
     /* info-form */
 }
 /* SCREEN3 */
@@ -893,12 +950,35 @@ $xtra-large: 1201px;
         &__btn {
             background: $color-blue;
             border-radius: 35px;
-            box-shadow: 1px 2px 6px #07ace6;
+            box-shadow:
+                #07ace65d 0px 2px 1px,
+                #07ace65d 0px 4px 2px,
+                #07ace65d 0px 8px 4px,
+                #07ace65d 0px 16px 8px,
+                #07ace65d 0px 32px 16px;
             border: 0px;
             color: #ffffff;
             font-size: 16px;
             font-weight: 700;
+            text-decoration: none;
+            outline: none;
+            transition: 0.5s;
             padding: 25px 15vw 25px 15vw;
+        }
+        &__btn:hover {
+            background-color: #08a6e4b5;
+            border-radius: 35px;
+            box-shadow:
+                #07ace61d 0px 2px 1px,
+                #07ace61d 0px 4px 2px,
+                #07ace61d 0px 8px 4px,
+                #07ace61d 0px 16px 8px,
+                #07ace61d 0px 32px 16px;
+            border: 0px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 25px 18vw 25px 18vw;
             text-decoration: none;
             outline: none;
             transition: 0.5s;

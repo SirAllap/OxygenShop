@@ -63,25 +63,33 @@ html {
   top: 35px;
 }
 .header__menu-text {
+  transition: all 0.5s;
   font-size: 11px;
   margin: 15px 0 0 30px;
   letter-spacing: 3px;
-  padding-left: 10px;
   opacity: 1;
   text-decoration: none;
 }
+.header__menu-text:hover {
+  transform: translateY(-3px);
+}
+.header__menu-text > a {
+  padding: 20px 10px 20px 0;
+}
 .header a:link {
+  transition: 0.5s;
   text-decoration: none;
   color: #a5a5a5;
-  transition: 0.5s;
 }
 .header a:visited {
   text-decoration: none;
   color: #a5a5a5;
 }
 .header a:hover {
+  transition: all 0.5s;
   text-decoration: none;
   color: #000000;
+  font-weight: 700;
 }
 .header a:active {
   text-decoration: none;
@@ -140,7 +148,7 @@ html {
 .screen1__btn {
   background: #08a6e4;
   border-radius: 35px;
-  box-shadow: 1px 2px 6px #07ace6;
+  box-shadow: rgba(7, 172, 230, 0.3647058824) 0px 2px 1px, rgba(7, 172, 230, 0.3647058824) 0px 4px 2px, rgba(7, 172, 230, 0.3647058824) 0px 8px 4px, rgba(7, 172, 230, 0.3647058824) 0px 16px 8px, rgba(7, 172, 230, 0.3647058824) 0px 32px 16px;
   border: 0px;
   color: #ffffff;
   font-size: 16px;
@@ -148,6 +156,20 @@ html {
   padding: 25px 90px 25px 90px;
   text-decoration: none;
   outline: none;
+  transition: 0.5s;
+}
+.screen1__btn:hover {
+  box-shadow: rgba(7, 172, 230, 0.1137254902) 0px 2px 1px, rgba(7, 172, 230, 0.1137254902) 0px 4px 2px, rgba(7, 172, 230, 0.1137254902) 0px 8px 4px, rgba(7, 172, 230, 0.1137254902) 0px 16px 8px, rgba(7, 172, 230, 0.1137254902) 0px 32px 16px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  transition: 0.5s;
+  padding: 25px 115px 25px 115px;
+  transform: translateY(-5px);
+  background-color: rgba(8, 166, 228, 0.7098039216);
+  color: #fff;
 }
 .screen1__img {
   width: 100vw;
@@ -425,17 +447,20 @@ html {
 }
 .screen3__pricing-card2:hover .screen3__pricing-card-btn2 {
   position: relative;
-  bottom: 82px;
-  left: 75px;
-  background: #08a6e4;
+  bottom: 96px;
+  left: 70px;
   border-radius: 35px;
-  border: 0px;
-  color: #ffffff;
   font-size: 13px;
   font-weight: 700;
-  padding: 20px 60px 20px 60px;
+  padding: 20px 65px 20px 65px;
   text-decoration: none;
   outline: none;
+  box-shadow: rgba(7, 172, 230, 0.1137254902) 0px 2px 1px, rgba(7, 172, 230, 0.1137254902) 0px 4px 2px, rgba(7, 172, 230, 0.1137254902) 0px 8px 4px, rgba(7, 172, 230, 0.1137254902) 0px 16px 8px, rgba(7, 172, 230, 0.1137254902) 0px 32px 16px;
+  transition: 0.4s;
+  transform: translateY(0px);
+  background-color: #fff;
+  color: #07ace6;
+  border: solid 2px rgba(7, 171, 230, 0.2901960784);
 }
 .screen3__pricing-card3 {
   transition: 0.5s;
@@ -612,6 +637,18 @@ html {
   text-decoration: none;
   outline: none;
 }
+.screen3__form-btn:hover {
+  box-shadow: rgba(7, 172, 230, 0.1137254902) 0px 2px 1px, rgba(7, 172, 230, 0.1137254902) 0px 4px 2px, rgba(7, 172, 230, 0.1137254902) 0px 8px 4px, rgba(7, 172, 230, 0.1137254902) 0px 16px 8px, rgba(7, 172, 230, 0.1137254902) 0px 32px 16px;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  outline: none;
+  transition: 0.5s;
+  transform: translateY(-5px);
+  background-color: rgba(8, 166, 228, 0.7098039216);
+  color: #fff;
+}
 
 /* SCREEN3 */
 /* Button to top */
@@ -781,12 +818,25 @@ Common breakpoints:
   .screen1__btn {
     background: #08a6e4;
     border-radius: 35px;
-    box-shadow: 1px 2px 6px #07ace6;
+    box-shadow: rgba(7, 172, 230, 0.3647058824) 0px 2px 1px, rgba(7, 172, 230, 0.3647058824) 0px 4px 2px, rgba(7, 172, 230, 0.3647058824) 0px 8px 4px, rgba(7, 172, 230, 0.3647058824) 0px 16px 8px, rgba(7, 172, 230, 0.3647058824) 0px 32px 16px;
     border: 0px;
     color: #ffffff;
     font-size: 16px;
     font-weight: 700;
+    text-decoration: none;
+    outline: none;
+    transition: 0.5s;
     padding: 25px 15vw 25px 15vw;
+  }
+  .screen1__btn:hover {
+    background-color: rgba(8, 166, 228, 0.7098039216);
+    border-radius: 35px;
+    box-shadow: rgba(7, 172, 230, 0.1137254902) 0px 2px 1px, rgba(7, 172, 230, 0.1137254902) 0px 4px 2px, rgba(7, 172, 230, 0.1137254902) 0px 8px 4px, rgba(7, 172, 230, 0.1137254902) 0px 16px 8px, rgba(7, 172, 230, 0.1137254902) 0px 32px 16px;
+    border: 0px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 25px 18vw 25px 18vw;
     text-decoration: none;
     outline: none;
     transition: 0.5s;
