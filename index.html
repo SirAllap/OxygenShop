@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" type="image/png" href="./assets/favico_oxygen_academy.png"/>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/favico_oxygen_academy.png"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,21 +15,24 @@
   </head>
 
   <body>
-    <!-- header -->
+    <!-- barra progreso -->
     <div class="barra-progreso">
       <div class="porcentaje-barra">
         <span style="color: transparent">0</span>
       </div>
     </div>
+    <!-- barra progreso -->
+
+    <!-- header -->
     <span id="open"></span>
     <header class="header">
       <nav class="header__menu-mobile">
         <a href=".">
-        <img
-        class="header__logo"
-        src="./assets/OxygenShop.png"
-        alt="header company logo"
-        />
+          <img
+            class="header__logo"
+            src="./assets/OxygenShop.png"
+            alt="header company logo"
+          />
         </a>
         <a href="#open">
           <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
@@ -50,11 +57,11 @@
       </nav>
       <nav class="header__menu-normal">
         <a href=".">
-        <img
-        class="header__logo"
-        src="./assets/OxygenShop.png"
-        alt="header company logo"
-        />
+          <img
+            class="header__logo"
+            src="./assets/OxygenShop.png"
+            alt="header company logo"
+          />
         </a>
         <div class="header__menu-text-vertical">
           <!-- <hr class="header__menu-text-vertical-line" /> -->
@@ -78,7 +85,7 @@
     <!-- screen1 -->
     <div class="screen1">
       <a id="whyus"></a>
-      <h1 class="screen1__h1-text">Sell More!</h1></a>
+      <h1 class="screen1__h1-text">Sell More!</h1>
       <p class="screen1__p-text">
         Open shop on our platform and increase your sales
       </p>
@@ -248,6 +255,8 @@
           <button class="screen3__pricing-card-btn3">Begin</button>
         </article>
       </section>
+
+      <!-- info + form -->
       <section class="screen3__info-form">
         <article class="screen3__info">
           <h1>Any questions?</h1>
@@ -269,14 +278,32 @@
             </div>
           </div>
         </article>
-        <form id="info-form" class="screen3__form">      
-          <label for='form-name'>NAME</label><br>
-          <input type="text" name="form-name" id="form-name" required/><br><br>
-          <label for='form-email'>EMAIL</label><br>
-          <input type="email" name="form-email" id="form-email" required/>
-          <br />
+        <form id="info-form" class="screen3__form">
+          <label for="form-name">NAME</label><br />
+          <input
+            type="text"
+            placeholder="e.g. Monty"
+            name="form-name"
+            id="form-name"
+            required
+          /><br /><br />
+
+          <label for="form-email">EMAIL</label><br />
+          <input
+            type="email"
+            placeholder="e.g. monty@python.com"
+            name="form-email"
+            id="form-email"
+            required
+          /><br />
+
           <div class="screen3__form-input-checkbox">
-            <input type="checkbox" name="" id="" required/>
+            <input
+              type="checkbox"
+              name="form-checkbox"
+              id="form-checkbox"
+              required
+            />
             <div>
               I hereby give consent for my personal data included in my
               application to be processed for the purposes of the recruitment
@@ -288,59 +315,56 @@
             </div>
           </div>
           <br />
-          <button class="screen3__form-btn">send</button>
         </form>
-        <!-- <article id="info-form" class="screen3__form">      
-          <p>NAME</p>
-          <input type="text" name="" id="" />
-          <p>EMAIL</p>
-          <input type="text" name="" id="" />
-          <br />
-          <div class="screen3__form-input-checkbox">
-            <input type="checkbox" name="" id="" />
-            <div>
-              I hereby give consent for my personal data included in my
-              application to be processed for the purposes of the recruitment
-              process under the European Parliament’s and Council of the
-              European Union Regulation on the Protection of Natural Persons as
-              of 27 April 2016, with regard to the processing of personal data
-              and on the free movement of such data, and repealing Directive
-              95/46/EC (Data Protection Directive)
-            </div>
-          </div>
-          <br />
-          <button class="screen3__form-btn">send</button>
-        </article> -->
+        <button
+          id="submit-btn"
+          onclick="validateForm()"
+          class="screen3__form-btn"
+          value="lkjsdf"
+        >
+          Send
+        </button>
       </section>
+      <!-- info + form -->
     </div>
+    <!-- screen3 -->
+
+    <!-- return to the top -->
     <a href="#" class="top">
       <i class="fa-solid fa-arrow-up-long"></i>
       &nbsp;Return to the top&nbsp;
       <i class="fa-solid fa-arrow-up-long"></i>
     </a>
+    <!-- return to the top -->
+
+    <!-- footer -->
     <footer class="footer">
       <section class="footer__left-section">
         <a href=".">
-        <img
-          class="footer__logo"
-          src="./assets/OxygenShop.png"
-          alt="header company logo"
-        />
+          <img
+            class="footer__logo"
+            src="./assets/OxygenShop.png"
+            alt="header company logo"
+          />
         </a>
         <p class="footer__copyright">© 2022 OXYGEN, All Rights Reserved</p>
       </section>
       <section class="footer__right-section">
-          <a href="https://www.twitter.com" target='_blank'><i
-          class="fa-brands fa-square-twitter fa-2xl"
-          style="color: #55acee"
-        ></i></a>
-          <a href="https://www.facebook.com" target='_blank'><i
-          class="fa-brands fa-square-facebook fa-2xl"
-          style="color: #3b5998"
-        ></i></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i
+            class="fa-brands fa-square-twitter fa-2xl"
+            style="color: #55acee"
+          ></i
+        ></a>
+        <a href="https://www.facebook.com" target="_blank"
+          ><i
+            class="fa-brands fa-square-facebook fa-2xl"
+            style="color: #3b5998"
+          ></i
+        ></a>
       </section>
     </footer>
-    <!-- screen3 -->
+    <!-- footer -->
   </body>
   <script src="script.js"></script>
   <script
