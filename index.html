@@ -279,7 +279,8 @@
           </div>
         </article>
         <form id="info-form" class="screen3__form">
-          <label for="form-name">NAME</label><br />
+          <label for="form-name">NAME</label>
+          <span id="confirmation"></span><br />
           <input
             type="text"
             placeholder="e.g. Monty"
@@ -315,15 +316,14 @@
             </div>
           </div>
           <br />
+          <button
+            id="submit-btn"
+            onclick="validateForm()"
+            class="screen3__form-btn"
+          >
+            Send
+          </button>
         </form>
-        <button
-          id="submit-btn"
-          onclick="validateForm()"
-          class="screen3__form-btn"
-          value="lkjsdf"
-        >
-          Send
-        </button>
       </section>
       <!-- info + form -->
     </div>

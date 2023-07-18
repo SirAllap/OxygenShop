@@ -1,3 +1,4 @@
+// this is used to know when the whole DOM elements are loaded
 document.addEventListener("DOMContentLoaded", function () {
     // saves the html element div of the percentaje bar
     const barraprogreso = document.querySelector('.porcentaje-barra')
@@ -43,30 +44,60 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
-const formInputName = document.querySelector('input[type="text"]')
-const formInputEmail = document.querySelector('input[type="email"]')
-const formInputCheckbox = document.querySelector('input[type="checkbox"]')
-
-// saves all the inputs into an array to clean the style 
-const arrStyles = [formInputName, formInputEmail, formInputCheckbox]
-
-const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+// this will prevent the button of the form to refresh the page
+document.querySelector('#submit-btn').addEventListener('click', function (event) {
+    event.preventDefault();
+});
 
 function validateForm() {
+    const formInputName = document.querySelector('input[type="text"]')
+    const formInputEmail = document.querySelector('input[type="email"]')
+    const namestr = formInputName.value
+    const emailstr = formInputEmail.value
+    const formInputCheckbox = document.querySelector('input[type="checkbox"]')
+    // saves all the inputs into an array to clean the style 
+    const arrStyles = [formInputName, formInputEmail, formInputCheckbox]
+    const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+
     if (formInputName.value.length <= 2 || formInputName.value.length >= 100) {
         formInputName.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
-    } else if (!emailChecker.test(formInputEmail.value)) {
+    } else if (!emailChecker.test(formInputEmail.value.toLowerCase())) {
         formInputEmail.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
     } else if (!formInputCheckbox.checked) {
         formInputCheckbox.style.cssText = 'outline: 2px solid #ff0303;'
     } else {
         arrStyles.forEach(e => e.removeAttribute('style'))
-        document.querySelector("#submit-btn").innerHTML = "Sending...";
-        setTimeout(function () {
+        document.querySelector("#submit-btn").innerHTML = "Sending..."
+        fetchingData(namestr, emailstr)
+        setTimeout(function (namestr, emailstr) {
             formInputName.value = ""
             formInputEmail.value = ""
             formInputCheckbox.checked = false
-            document.querySelector("#submit-btn").innerHTML = "Send";
-        }, 1000)
+            document.querySelector("#submit-btn").innerHTML = "Send"
+            document.querySelector("#confirmation").innerHTML = " "
+            document.querySelector("#confirmation").removeAttribute('style')
+        }, 1500)
+    }
+}
+
+async function fetchingData(n, e) {
+    try {
+        fetch('https://jsonplaceholder.typicode.com/users', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: n,
+                email: e,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then(() => {
+                document.querySelector("#confirmation").innerHTML = "Your data has been successfully received!"
+                document.querySelector("#confirmation").style.cssText = 'position: absolute;background-color: #55dfb4;font-weight: 600;border-radius: 10px;padding: 15px;'
+            })
+    } catch (error) {
+        console.log(error)
     }
 }
