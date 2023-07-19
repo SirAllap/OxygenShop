@@ -279,7 +279,14 @@
         letter-spacing: 5px;
         color: $color-blue;
     }
-    input[type="text"] {
+    &__form span.confirmationMsg {
+        position: absolute;
+        background-color: #55dfb4;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    #info-form input[type="text"] {
         font-family: "Open Sans";
         font-weight: 400;
         font-size: 16px;
@@ -288,15 +295,19 @@
         border-width: 0 0 1px;
         border-color: #95989a;
         width: 100%;
-        padding: 25px 0 10px 0;
+        padding: 25px 0 10px 5px;
     }
-    input[type="text"]:hover {
+    #info-form input[type="text"].valid {
+        border-width: 0 0 2px 0;
+        border-color: rgb(255, 0, 0);
+    }
+    #info-form input[type="text"]:hover {
         outline: 0;
         border-width: 0 0 1px;
         border-color: $color-blue;
         width: 100%;
     }
-    input[type="email"] {
+    #info-form input[type="email"] {
         font-family: "Open Sans";
         font-weight: 400;
         font-size: 16px;
@@ -305,17 +316,24 @@
         border-width: 0 0 1px;
         border-color: #95989a;
         width: 100%;
-        padding: 25px 0 10px 0;
+        padding: 25px 0 10px 5px;
     }
-    input[type="email"]:hover {
+    #info-form input[type="email"].valid {
+        border-width: 0 0 2px 0;
+        border-color: rgb(255, 0, 0);
+    }
+    #info-form input[type="email"]:hover {
         outline: 0;
         border-width: 0 0 1px;
         border-color: $color-blue;
         width: 100%;
     }
-    input[type="checkbox"] {
+    #info-form input[type="checkbox"] {
         width: 24px;
         height: 24px;
+    }
+    #info-form input[type="checkbox"].valid {
+        outline: 2px solid #ff0303;
     }
     &__form-input-checkbox {
         margin-top: 40px;

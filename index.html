@@ -25,6 +25,44 @@
 
     <!-- header -->
     <span id="open"></span>
+    <!-- modal subscribe newsletter -->
+    <div class="newsletter">
+      <form class="newsletter__modal-form" id="modal-form">
+        <i
+          class="newsletter__modal-close-icon fa-solid fa-xmark fa-l"
+        ></i>
+        <h3 class="newsletter__modal-title">Subscribe to our newsletter</h3>
+        <label
+          style="
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 5px;
+            padding-top: 15px;
+          "
+          for="modal-form-email"
+          >EMAIL</label
+        >
+        <input
+          class="newsletter__newsletter-input-email"
+          type="email"
+          placeholder="e.g. monty@python.com"
+          name="modal-form-email"
+          id="modal-form-email"
+        /><br />
+        <br />
+        <button
+          class="newsletter__modal-form-btn"
+          id="modal-submit-btn"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <!-- modal subscribe newsletter -->
     <header class="header">
       <nav class="header__menu-mobile">
         <a href=".">
@@ -282,6 +320,7 @@
           <label for="form-name">NAME</label>
           <span id="confirmation"></span><br />
           <input
+            class="screen3__form-name-input"
             type="text"
             placeholder="e.g. Monty"
             name="form-name"
@@ -291,6 +330,7 @@
 
           <label for="form-email">EMAIL</label><br />
           <input
+            class="screen3__form-email-input"
             type="email"
             placeholder="e.g. monty@python.com"
             name="form-email"
@@ -318,7 +358,6 @@
           <br />
           <button
             id="submit-btn"
-            onclick="validateForm()"
             class="screen3__form-btn"
           >
             Send

@@ -1,0 +1,95 @@
+#modal-form input[type="email"] {
+    font-family: "Open Sans";
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 2px;
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: #95989a;
+    width: 90%;
+    padding: 8px 0 10px 5px;
+    transition: 0.5s;
+}
+#modal-form input[type="email"].valid {
+    border-width: 0 0 2px 0;
+    border-color: rgb(255, 0, 0);
+}
+#modal-form input[type="email"]:hover {
+    outline: 0;
+    border-width: 0 0 1px;
+    border-color: $color-blue;
+    transform: scaleX(1.1);
+}
+.newsletter {
+    display: none;
+    position: fixed;
+    left: 99%;
+    transform: translate(-99%, 0);
+    top: 10%;
+    z-index: 100;
+    width: 320px;
+    height: auto;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #e8e9edfa;
+    &__modal-form {
+        padding: 20px;
+    }
+    &__modal-form label {
+        display: block;
+        text-align: left;
+        padding: 15px 0 8px 0;
+        color: #434d57;
+    }
+    &__modal-close-icon {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        color: #000;
+    }
+    &__modal-close-icon:hover {
+        color: #00000076;
+    }
+    &__modal-title {
+        font-family: "Raleway", sans-serif;
+        color: #434d57;
+        font-size: 21px;
+        font-weight: 700;
+        text-align: left;
+        padding-top: 10px;
+    }
+    &__modal-title.info-msg {
+        position: absolute;
+        background-color: #55dfb4;
+        font-weight: 900;
+        border-radius: 10px;
+        padding: 15px;
+        width: 280px;
+        color: #434d57;
+        text-align: center;
+    }
+    &__modal-form-btn {
+        width: 200;
+        background: #55dfb4;
+        border-radius: 35px;
+        border: 0px;
+        color: #434d57;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px 0 10px 0;
+        width: 100%;
+        text-decoration: none;
+        outline: none;
+        transition: 0.5s;
+    }
+    &__modal-form-btn:hover {
+        background: #55dfb3bd;
+    }
+}
+.newsletter.modal-on {
+    display: block;
+}

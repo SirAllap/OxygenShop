@@ -1,4 +1,29 @@
-// this is used to know when the whole DOM elements are loaded
+const modal = document.querySelector('.newsletter')
+const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+const checkModalViewed = localStorage.getItem("modalViewed");
+
+
+window.onload = function () {
+    history.scrollRestoration = 'manual';
+    // this will prevent the button of the form to refresh the page
+    document.querySelector('#submit-btn').addEventListener('click', function (event) {
+        event.preventDefault();
+    })
+
+    // this will prevent the button of the modal to refresh the page
+    document.querySelector('#modal-submit-btn').addEventListener('click', function (event) {
+        event.preventDefault();
+    })
+
+
+    if (checkModalViewed === null) {
+        // * bad practice to change the style directly on the HTML elements
+        // ! setTimeout(() => { modal.style.cssText = 'display: block;' }, 5000)
+        // * Instead we add or remove a class to change the style
+        setTimeout(() => { modal.classList.add('modal-on') }, 5000)
+    }
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     // saves the html element div of the percentaje bar
     const barraprogreso = document.querySelector('.porcentaje-barra')
@@ -32,7 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // when we scroll this event starts running
         window.addEventListener("scroll", function () {
             // the percertaje of the scroll is 10 or higer we will add to the HTML the "active" class if it's smoller than 10 it will remove "active" class if exist
-            if (window.Math.round(porcen) > 95) {
+            if (window.Math.round(porcen) === 25 && checkModalViewed === null) {
+                // ! document.querySelector('.newsletter').style.cssText = 'display: block;'
+                modal.classList.add('modal-on')
+            } else if (window.Math.round(porcen) > 95) {
                 // var activateButton = setTimeout(() => {
                 //     botonTop.classList.add("active")
                 // }, 200)
@@ -44,29 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
-// this will prevent the button of the form to refresh the page
-document.querySelector('#submit-btn').addEventListener('click', function (event) {
-    event.preventDefault();
-});
+document.addEventListener('keydown', (k) => {
+    if (k.keyCode === 27 && checkModalViewed === null) closethemodal()
+})
+
+document.addEventListener('click', e => {
+    modal.classList.contains('modal-on') && (e.target.matches('.newsletter__modal-close-icon') || !e.target.closest('.newsletter')) ? closethemodal()
+        : e.target.matches('.newsletter__modal-close-icon') ? closethemodal()
+            : e.target.matches('.screen3__form-btn') ? validateForm()
+                : e.target.matches('.newsletter__modal-form-btn') ? subscribeToNewsletter()
+                    : false
+})
 
 function validateForm() {
-    const formInputName = document.querySelector('input[type="text"]')
-    const formInputEmail = document.querySelector('input[type="email"]')
+    const formInputName = document.querySelector('#info-form input[type="text"]')
+    const formInputEmail = document.querySelector('#info-form input[type="email"]')
     const namestr = formInputName.value
     const emailstr = formInputEmail.value
     const formInputCheckbox = document.querySelector('input[type="checkbox"]')
+    const confirmationMsg = document.querySelector("#confirmation")
     // saves all the inputs into an array to clean the style 
-    const arrStyles = [formInputName, formInputEmail, formInputCheckbox]
-    const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
+    const arrClass = [formInputName, formInputEmail, formInputCheckbox]
 
     if (formInputName.value.length <= 2 || formInputName.value.length >= 100) {
-        formInputName.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
+        // ! formInputName.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
+        formInputName.classList.add('valid')
     } else if (!emailChecker.test(formInputEmail.value.toLowerCase())) {
-        formInputEmail.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
+        // ! formInputEmail.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
+        formInputEmail.classList.add('valid')
     } else if (!formInputCheckbox.checked) {
-        formInputCheckbox.style.cssText = 'outline: 2px solid #ff0303;'
+        // ! formInputCheckbox.style.cssText = 'outline: 2px solid #ff0303;'
+        formInputCheckbox.classList.add('valid')
     } else {
-        arrStyles.forEach(e => e.removeAttribute('style'))
+        arrClass.forEach(e => e.classList.remove('valid'))
         document.querySelector("#submit-btn").innerHTML = "Sending..."
         fetchingData(namestr, emailstr)
         setTimeout(function (namestr, emailstr) {
@@ -74,30 +112,83 @@ function validateForm() {
             formInputEmail.value = ""
             formInputCheckbox.checked = false
             document.querySelector("#submit-btn").innerHTML = "Send"
-            document.querySelector("#confirmation").innerHTML = " "
-            document.querySelector("#confirmation").removeAttribute('style')
-        }, 1500)
+            confirmationMsg.innerHTML = " "
+            // ! document.querySelector("#confirmation").removeAttribute('style')
+            confirmationMsg.classList.remove('confirmationMsg')
+        }, 2000)
+    }
+
+    async function fetchingData(n, e) {
+        try {
+            fetch('https://jsonplaceholder.typicode.com/users', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name: n,
+                    email: e,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then(() => {
+                    confirmationMsg.innerHTML = "Your data has been successfully received!"
+                    // ! confirmationMsg.style.cssText = 'position: absolute;background-color: #55dfb4;font-weight: 600;border-radius: 10px;padding: 15px;'
+                    confirmationMsg.classList.add('confirmationMsg')
+                })
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
-async function fetchingData(n, e) {
-    try {
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
-            body: JSON.stringify({
-                name: n,
-                email: e,
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-            .then((response) => response.json())
-            .then(() => {
-                document.querySelector("#confirmation").innerHTML = "Your data has been successfully received!"
-                document.querySelector("#confirmation").style.cssText = 'position: absolute;background-color: #55dfb4;font-weight: 600;border-radius: 10px;padding: 15px;'
-            })
-    } catch (error) {
-        console.log(error)
+function subscribeToNewsletter() {
+    const modalInputEmail = document.querySelector('#modal-form input[type="email"]')
+    const modalEmail = modalInputEmail.value
+    const modalTitle = document.querySelector(".newsletter__modal-title")
+
+    if (!emailChecker.test(modalInputEmail.value.toLowerCase())) {
+        // ! modalInputEmail.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
+        modalInputEmail.classList.add('valid')
+    } else {
+        fetchingDataFromModal(modalEmail)
+        // ! modalInputEmail.removeAttribute('style')
+        modalInputEmail.classList.remove('valid')
+        setTimeout(function () {
+            modalInputEmail.value = ""
+            localStorage.setItem("modalViewed", true);
+            // ! modalTitle.removeAttribute('style')
+            modalTitle.classList.remove('info-msg')
+            // ! modal.style.cssText = 'display: none;'
+            modal.classList.remove('modal-on')
+        }, 2000)
     }
+    async function fetchingDataFromModal(e) {
+        try {
+            fetch('https://jsonplaceholder.typicode.com/users/1/post', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: e,
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((json) => console.log(json))
+                .then(() => {
+                    modalTitle.innerHTML = "You has been successfully subscribed!"
+                    // !document.querySelector(".newsletter__modal-title").style.cssText = 'position: absolute;background-color: #55dfb4;font-weight: 900;border-radius: 10px;padding: 15px; width: 280px; color: #434d57; text-align: center;'
+                    modalTitle.classList.add('info-msg')
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+function closethemodal() {
+    localStorage.setItem("modalViewed", true);
+    // ! modal.style.cssText = 'display: none;'
+    modal.classList.remove('modal-on')
 }
