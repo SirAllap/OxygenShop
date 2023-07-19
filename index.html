@@ -24,7 +24,7 @@
     <!-- barra progreso -->
 
     <!-- header -->
-    <span id="open"></span>
+    <!-- ! <span id="open"></span> -->
     <!-- modal subscribe newsletter -->
     <div class="newsletter">
       <form class="newsletter__modal-form" id="modal-form">
@@ -72,13 +72,13 @@
             alt="header company logo"
           />
         </a>
-        <a href="#open">
+        <!-- ! <a href="#open"> -->
           <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
-        </a>
+        <!-- ! </a> -->
         <nav class="header__close-burger">
-          <a href="#close">
+          <!-- ! <a href="#close"> -->
             <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
-          </a>
+          <!-- ! </a> -->
           <div class="header__menu-text">
             <a href="#whyus">WHY US</a>
           </div>
@@ -201,6 +201,20 @@
 
     <!-- screen3 -->
     <div id="pricing" class="screen3">
+      <div class='screen3__currency-selector' style='text-align: center; padding: 0 0 30px 0;'>
+        <label 
+          class='screen3__currency-selector-title' 
+          for="currency-select">
+          Choose your preferred currency:
+        </label>
+        <br>
+        <br>
+        <select name="currency" id="currency-select">
+          <option value="value1">EUR</option>
+          <option value="value2">USD</option>
+          <option value="value3">GBP</option>
+        </select>
+      </div>
       <h1 class="screen3__pricing-titel">Pricing</h1>
       <section class="screen3__pricing-section">
         <article class="screen3__pricing-card">

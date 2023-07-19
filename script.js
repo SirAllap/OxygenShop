@@ -2,9 +2,10 @@ const modal = document.querySelector('.newsletter')
 const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
 const checkModalViewed = localStorage.getItem("modalViewed");
 
-
 window.onload = function () {
+    // on reload the page will go straight to the top
     history.scrollRestoration = 'manual';
+
     // this will prevent the button of the form to refresh the page
     document.querySelector('#submit-btn').addEventListener('click', function (event) {
         event.preventDefault();
@@ -15,7 +16,6 @@ window.onload = function () {
         event.preventDefault();
     })
 
-
     if (checkModalViewed === null) {
         // * bad practice to change the style directly on the HTML elements
         // ! setTimeout(() => { modal.style.cssText = 'display: block;' }, 5000)
@@ -23,6 +23,12 @@ window.onload = function () {
         setTimeout(() => { modal.classList.add('modal-on') }, 5000)
     }
 };
+
+window.onresize = (e) => {
+    window.innerWidth >= 960
+        ? document.querySelector('.header').classList.remove('open')
+        : false
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     // saves the html element div of the percentaje bar
@@ -81,7 +87,9 @@ document.addEventListener('click', e => {
         : e.target.matches('.newsletter__modal-close-icon') ? closethemodal()
             : e.target.matches('.screen3__form-btn') ? validateForm()
                 : e.target.matches('.newsletter__modal-form-btn') ? subscribeToNewsletter()
-                    : false
+                    : e.target.matches('.header__burger-icon') ? document.querySelector('.header').classList.add('open')
+                        : e.target.matches('.header__close-icon') ? document.querySelector('.header').classList.remove('open')
+                            : false
 })
 
 function validateForm() {
@@ -117,10 +125,9 @@ function validateForm() {
             confirmationMsg.classList.remove('confirmationMsg')
         }, 2000)
     }
-
     async function fetchingData(n, e) {
         try {
-            fetch('https://jsonplaceholder.typicode.com/users', {
+            const response = await fetch('https://jsonplaceholder.typicode.com/users', {
                 method: 'POST',
                 body: JSON.stringify({
                     name: n,
@@ -165,7 +172,7 @@ function subscribeToNewsletter() {
     }
     async function fetchingDataFromModal(e) {
         try {
-            fetch('https://jsonplaceholder.typicode.com/users/1/post', {
+            const response = await fetch('https://jsonplaceholder.typicode.com/users/1/post', {
                 method: 'POST',
                 body: JSON.stringify({
                     email: e,
@@ -191,4 +198,29 @@ function closethemodal() {
     localStorage.setItem("modalViewed", true);
     // ! modal.style.cssText = 'display: none;'
     modal.classList.remove('modal-on')
+}
+
+const curr = document.querySelector('#currency-select')
+curr.addEventListener('change', () => {
+    curr.options[curr.selectedIndex].innerText === "USD" ? fetchDataFromCurrencyAPI("usd")
+        // : curr.options[curr.selectedIndex].innerText === "GBP" ? fetchDataFromCurrencyAPI("gbp")
+        //     : curr.options[curr.selectedIndex].innerText === "EUR" ? fetchDataFromCurrencyAPI("eur")
+        : false
+
+})
+
+async function fetchDataFromCurrencyAPI(c) {
+    try {
+        const response = await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
+        const currencies = await response.json()
+        c === "usd" ? console.log(`1 euro son ${currencies.eur.usd} USD`)
+            : false
+
+        // const eur2gbp = currencies.eur.gbp
+
+        // .then((response) => response.json())
+        // .then((json) => console.log(json))
+    } catch (error) {
+        console.log(error)
+    }
 }
