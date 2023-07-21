@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <title>OXYGEN Shop</title>
   </head>
 
@@ -29,9 +33,7 @@
     <!-- modal subscribe newsletter -->
     <div class="newsletter">
       <form class="newsletter__modal-form" id="modal-form">
-        <i
-          class="newsletter__modal-close-icon fa-solid fa-xmark fa-l"
-        ></i>
+        <i class="newsletter__modal-close-icon fa-solid fa-xmark fa-l"></i>
         <h3 class="newsletter__modal-title">Subscribe to our newsletter</h3>
         <label
           style="
@@ -55,10 +57,7 @@
           id="modal-form-email"
         /><br />
         <br />
-        <button
-          class="newsletter__modal-form-btn"
-          id="modal-submit-btn"
-        >
+        <button class="newsletter__modal-form-btn" id="modal-submit-btn">
           Subscribe
         </button>
       </form>
@@ -74,23 +73,29 @@
           />
         </a>
         <!-- ! <a href="#open"> -->
-          <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
+        <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
         <!-- ! </a> -->
         <nav class="header__close-burger">
           <!-- ! <a href="#close"> -->
-            <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
+          <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
           <!-- ! </a> -->
           <div class="header__menu-text">
-            <a href="#whyus">WHY US <span class='header__link-wider'></span></a>
+            <a href="#whyus">WHY US <span class="header__link-wider"></span></a>
           </div>
           <div class="header__menu-text">
-            <a href="#benefits">BENEFITS <span class='header__link-wider'></span></a>
+            <a href="#benefits"
+              >BENEFITS <span class="header__link-wider"></span
+            ></a>
           </div>
           <div class="header__menu-text">
-            <a href="#pricing">PRICES <span class='header__link-wider'></span></a>
+            <a href="#pricing"
+              >PRICES <span class="header__link-wider"></span
+            ></a>
           </div>
           <div class="header__menu-text">
-            <a href="#info-form">CONTACT <span class='header__link-wider'></span></a>
+            <a href="#info-form"
+              >CONTACT <span class="header__link-wider"></span
+            ></a>
           </div>
         </nav>
       </nav>
@@ -201,22 +206,32 @@
     <!-- screen2 -->
 
     <!-- screen3 -->
-    <span id="pricing" style='height: 20px; width: 100%; padding: 80px;'> 
-      <br>
-      <br>
-      <br>
+    <span id="pricing" style="height: 20px; width: 100%; padding: 80px">
+      <br />
+      <br />
+      <br />
     </span>
     <div class="screen3">
       <h1 class="screen3__pricing-titel">Pricing</h1>
-      <div class='screen3__currency-selector' style='text-align: center; padding: 0 0 30px 0;'>
-        <label 
-          class='screen3__currency-selector-title' 
-          for="currency-select">
+      <div
+        class="screen3__currency-selector"
+        style="text-align: center; padding: 0 0 30px 0"
+      >
+        <label class="screen3__currency-selector-title" for="currency-select">
         </label>
-        <br>
-        <br>
-        <select name="currency" id="currency-select" style='border-width: 0 0 1px 0;border-color: #95989a; width: fit-content; text-align: center;'>
-          <option value="" selected disabled hidden >Preferred currency:</option>
+        <br />
+        <br />
+        <select
+          name="currency"
+          id="currency-select"
+          style="
+            border-width: 0 0 1px 0;
+            border-color: #95989a;
+            width: fit-content;
+            text-align: center;
+          "
+        >
+          <option value="" selected disabled hidden>Preferred currency:</option>
           <option value="value1">USD</option>
           <option value="value2">EUR</option>
           <option value="value3">GBP</option>
@@ -227,7 +242,11 @@
           <figure class="screen3__pricing-card-left">
             <p>Basic</p>
             <span>
-              <span class='screen3__pricing-all-card-left-currency-symbol'>$</span><span class='screen3__pricing-all-card-left-currency-number'>0</span>
+              <span class="screen3__pricing-all-card-left-currency-symbol"
+                >$</span
+              ><span class="screen3__pricing-all-card-left-currency-number"
+                >0</span
+              >
             </span>
           </figure>
           <figure class="screen3__pricing-card-right">
@@ -258,7 +277,11 @@
           <figure class="screen3__pricing-card2-left">
             <p>Professional</p>
             <span>
-              <span class='screen3__pricing-all-card-left-currency-symbol'>$</span><span class='screen3__pricing-all-card-left-currency-number'>25</span>
+              <span class="screen3__pricing-all-card-left-currency-symbol"
+                >$</span
+              ><span class="screen3__pricing-all-card-left-currency-number"
+                >25</span
+              >
             </span>
             <p>Limiter offer</p>
           </figure>
@@ -290,7 +313,11 @@
           <figure class="screen3__pricing-card3-left">
             <p>Premium</p>
             <span>
-              <span class='screen3__pricing-all-card-left-currency-symbol'>$</span><span class='screen3__pricing-all-card-left-currency-number'>60</span>
+              <span class="screen3__pricing-all-card-left-currency-symbol"
+                >$</span
+              ><span class="screen3__pricing-all-card-left-currency-number"
+                >60</span
+              >
             </span>
             <p>Limiter offer</p>
           </figure>
@@ -319,6 +346,65 @@
           <button class="screen3__pricing-card-btn3">Begin</button>
         </article>
       </section>
+      <!--slider -->
+      <div class="img-slider" id="slider">
+        <img
+          id="img0"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/590/238"
+          alt="Imagen 1"
+        />
+        <img
+          id="img1"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/501/200"
+          alt="Imagen 2"
+        />
+        <img
+          id="img2"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/502/200"
+          alt="Imagen 3"
+        />
+        <img
+          id="img3"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/503/200"
+          alt="Imagen 4"
+        />
+        <img
+          id="img4"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/504/200"
+          alt="Imagen 5"
+        />
+        <img
+          id="img5"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/505/200"
+          alt="Imagen 6"
+        />
+        <img
+          id="img6"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/506/200"
+          alt="Imagen 7"
+        />
+        <img
+          id="img7"
+          class="img-slider__img"
+          src="https://random.imagecdn.app/507/200"
+          alt="Imagen 7"
+        />
+        <span class="material-symbols-outlined img-slider__icon prev">
+          arrow_back_ios
+        </span>
+        <span class="material-symbols-outlined img-slider__icon next">
+          arrow_forward_ios
+        </span>
+        <div class="img-slider__dots-container"></div>
+      </div>
+      <!-- slider -->
 
       <!-- info + form -->
       <section class="screen3__info-form">
@@ -382,12 +468,7 @@
             </div>
           </div>
           <br />
-          <button
-            id="submit-btn"
-            class="screen3__form-btn"
-          >
-            Send
-          </button>
+          <button id="submit-btn" class="screen3__form-btn">Send</button>
         </form>
       </section>
       <!-- info + form -->
