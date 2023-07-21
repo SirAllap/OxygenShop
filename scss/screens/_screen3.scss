@@ -2,8 +2,7 @@
 
 /* SCREEN3 */
 .screen3 {
-    margin-top: 30px;
-    padding: 40px 25px 40px 25px;
+    padding: 0px 25px 40px 25px;
     &__pricing-titel {
         font-family: "Raleway", sans-serif;
         font-size: 36px;
@@ -243,7 +242,7 @@
 
     /* info-form */
     &__info-form {
-        margin-top: 15%;
+        padding: 120px 0 0 0;
     }
     &__info h1 {
         font-family: "Raleway", sans-serif;
@@ -361,6 +360,10 @@
         padding: 20px 90px 20px 90px;
         text-decoration: none;
         outline: none;
+        transition: 0.5s;
+    }
+    &__form-btn:hover {
+        background-color: #08a6e4b0;
     }
     @include sm {
         &__form-btn {
@@ -375,7 +378,6 @@
             padding: 20px 90px 20px 90px;
             text-decoration: none;
             outline: none;
-            transition: 0.5s;
         }
     }
     /* info-form */

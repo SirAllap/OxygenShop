@@ -1,6 +1,7 @@
 const modal = document.querySelector('.newsletter')
 const emailChecker = new RegExp("([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\"\(\[\]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(\.[!#-'*+/-9=?A-Z^-~-]+)*|\[[\t -Z^-~]*])");
 const checkModalViewed = localStorage.getItem("modalViewed");
+const arrFixedNumPricing = []
 
 window.onload = function () {
     // on reload the page will go straight to the top
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 //     botonTop.classList.add("active")
                 // }, 200)
                 botonTop.classList.add("active")
-            } else if (window.Math.round(porcen) < 90) {
+            } else if (window.Math.round(porcen) < 80) {
                 botonTop.classList.remove("active")
             }
         })
@@ -90,6 +91,38 @@ document.addEventListener('click', e => {
                     : e.target.matches('.header__burger-icon') ? document.querySelector('.header').classList.add('open')
                         : e.target.matches('.header__close-icon') ? document.querySelector('.header').classList.remove('open')
                             : false
+})
+
+document.querySelector('#currency-select').addEventListener('change', () => {
+    const currSelector = document.querySelector('#currency-select')
+    const currSymbol = document.querySelectorAll('.screen3__pricing-all-card-left-currency-symbol')
+    const currNumber = document.querySelectorAll('.screen3__pricing-all-card-left-currency-number')
+    arrFixedNumPricing.length === 0 ? currNumber.forEach(e => arrFixedNumPricing.push(Number(e.innerHTML))) : false
+    if (currSelector.options[currSelector.selectedIndex].innerText === "EUR") {
+        return currSymbol.forEach(e => e.innerHTML = '€'), resetPrices(), fetchDataFromCurrencyAPI("eur")
+    } else if (currSelector.options[currSelector.selectedIndex].innerText === "GBP") {
+        return currSymbol.forEach(e => e.innerHTML = '£'), resetPrices(), fetchDataFromCurrencyAPI("gbp")
+    } else {
+        return currSymbol.forEach(e => e.innerHTML = '$'), fetchDataFromCurrencyAPI("usd")
+    }
+
+    function resetPrices() {
+        currNumber.forEach((p, i) => p.innerHTML = arrFixedNumPricing[i])
+    }
+
+    async function fetchDataFromCurrencyAPI(c) {
+        try {
+            const response = await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.json')
+            const currencies = await response.json()
+
+            c === "eur" ? currNumber.forEach(e => e.innerHTML = Math.round(Number(e.innerHTML) * currencies.usd.eur))
+                : c === "gbp" ? currNumber.forEach(e => e.innerHTML = Math.round(Number(e.innerHTML) * currencies.usd.gbp))
+                    : resetPrices()
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 })
 
 function validateForm() {
@@ -127,7 +160,7 @@ function validateForm() {
     }
     async function fetchingData(n, e) {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/users', {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify({
                     name: n,
@@ -153,6 +186,7 @@ function subscribeToNewsletter() {
     const modalInputEmail = document.querySelector('#modal-form input[type="email"]')
     const modalEmail = modalInputEmail.value
     const modalTitle = document.querySelector(".newsletter__modal-title")
+    const modalBtn = document.querySelector(".newsletter__modal-form-btn")
 
     if (!emailChecker.test(modalInputEmail.value.toLowerCase())) {
         // ! modalInputEmail.style.cssText = 'border-width: 0 0 2px 0;border-color: rgb(255, 0, 0);'
@@ -168,11 +202,12 @@ function subscribeToNewsletter() {
             modalTitle.classList.remove('info-msg')
             // ! modal.style.cssText = 'display: none;'
             modal.classList.remove('modal-on')
+            modalBtn.classList.remove('none-btn')
         }, 2000)
     }
     async function fetchingDataFromModal(e) {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/users/1/post', {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify({
                     email: e,
@@ -187,6 +222,7 @@ function subscribeToNewsletter() {
                     modalTitle.innerHTML = "You has been successfully subscribed!"
                     // !document.querySelector(".newsletter__modal-title").style.cssText = 'position: absolute;background-color: #55dfb4;font-weight: 900;border-radius: 10px;padding: 15px; width: 280px; color: #434d57; text-align: center;'
                     modalTitle.classList.add('info-msg')
+                    modalBtn.classList.add('none-btn')
                 })
         } catch (error) {
             console.log(error)
@@ -198,29 +234,4 @@ function closethemodal() {
     localStorage.setItem("modalViewed", true);
     // ! modal.style.cssText = 'display: none;'
     modal.classList.remove('modal-on')
-}
-
-const curr = document.querySelector('#currency-select')
-curr.addEventListener('change', () => {
-    curr.options[curr.selectedIndex].innerText === "USD" ? fetchDataFromCurrencyAPI("usd")
-        // : curr.options[curr.selectedIndex].innerText === "GBP" ? fetchDataFromCurrencyAPI("gbp")
-        //     : curr.options[curr.selectedIndex].innerText === "EUR" ? fetchDataFromCurrencyAPI("eur")
-        : false
-
-})
-
-async function fetchDataFromCurrencyAPI(c) {
-    try {
-        const response = await fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/eur.json')
-        const currencies = await response.json()
-        c === "usd" ? console.log(`1 euro son ${currencies.eur.usd} USD`)
-            : false
-
-        // const eur2gbp = currencies.eur.gbp
-
-        // .then((response) => response.json())
-        // .then((json) => console.log(json))
-    } catch (error) {
-        console.log(error)
-    }
 }

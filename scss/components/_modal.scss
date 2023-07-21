@@ -23,8 +23,8 @@
 .newsletter {
     display: none;
     position: fixed;
-    left: 99%;
-    transform: translate(-99%, 0);
+    left: 50%;
+    transform: translate(-50%, 0);
     top: 10%;
     z-index: 100;
     width: 320px;
@@ -32,6 +32,10 @@
     border-radius: 5px;
     text-align: center;
     background-color: #e8e9edfa;
+    @include lg {
+        left: 98%;
+        transform: translate(-98%, 0);
+    }
     &__modal-form {
         padding: 20px;
     }
@@ -68,16 +72,18 @@
         font-weight: 900;
         border-radius: 10px;
         padding: 15px;
+        margin-top: 10px;
         width: 280px;
         color: #434d57;
         text-align: center;
     }
     &__modal-form-btn {
         width: 200;
-        background: #55dfb4;
+        // background: #55dfb4;
+        background: $color-red;
         border-radius: 35px;
         border: 0px;
-        color: #434d57;
+        color: #fff;
         font-size: 16px;
         font-weight: 700;
         padding: 10px 0 10px 0;
@@ -86,8 +92,12 @@
         outline: none;
         transition: 0.5s;
     }
+    &__modal-form-btn.none-btn {
+        display: none;
+    }
     &__modal-form-btn:hover {
-        background: #55dfb3bd;
+        background: #fb3b659a;
+        color: #414141;
     }
 }
 .newsletter.modal-on {

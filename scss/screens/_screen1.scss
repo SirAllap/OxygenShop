@@ -23,6 +23,10 @@
         padding: 25px 90px 25px 90px;
         text-decoration: none;
         outline: none;
+        transition: 0.5s;
+    }
+    &__btn:hover {
+        background-color: #08a6e4b0;
     }
     &__img {
         width: 100vw;

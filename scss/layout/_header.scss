@@ -36,7 +36,13 @@
         opacity: 1;
         text-decoration: none;
     }
+    &__link-wider {
+        position: absolute;
+        width: 100%;
+        height: 25px;
+    }
     a:link {
+        cursor: default;
         text-decoration: none;
         color: #a5a5a5;
         transition: 0.5s;
@@ -64,7 +70,8 @@
 
 /* BURGER MENU */
 .header.open {
-    height: 220px;
+    height: fit-content;
+    padding-bottom: 20px;
     .header__burger-icon {
         display: none;
     }
