@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window.Math.round(porcen) === 25 && checkModalViewed === null) {
                 // ! document.querySelector('.newsletter').style.cssText = 'display: block;'
                 modal.classList.add('modal-on')
-            } else if (window.Math.round(porcen) > 90) {
+            } else if (window.Math.round(porcen) > 95) {
                 // var activateButton = setTimeout(() => {
                 //     botonTop.classList.add("active")
                 // }, 200)
