@@ -5,16 +5,17 @@
     font-family: "Open Sans";
 }
 body {
-    width: 100vw;
+    min-width: 320px;
     overflow-x: hidden;
 }
 @media screen and (min-width: 140px) {
     body,
     html {
         width: 100vw;
+        overflow-x: hidden;
     }
 }
-
 html {
+    min-width: 320px;
     scroll-behavior: smooth;
 }
