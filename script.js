@@ -146,22 +146,27 @@ document.querySelector('#currency-select').addEventListener('change', () => {
 
 const validateForm = () => {
     const formInputName = document.querySelector('#info-form input[type="text"]')
-    const formInputEmail = document.querySelector(
-        '#info-form input[type="email"]'
-    )
+    const formInputEmail = document.querySelector('#info-form input[type="email"]')
     const namestr = formInputName.value
     const emailstr = formInputEmail.value
     const formInputCheckbox = document.querySelector('input[type="checkbox"]')
     const confirmationMsg = document.querySelector('#confirmation')
     const arrClass = [formInputName, formInputEmail, formInputCheckbox]
+    let confirmationVal = 0
 
-    if (formInputName.value.length <= 2 || formInputName.value.length >= 100) {
+    if (formInputName.value.length <= 2 || formInputName.value.length >= 100 || !formInputName.value) {
         formInputName.classList.add('valid')
-    } else if (!emailChecker.test(formInputEmail.value.toLowerCase())) {
+    } else formInputName.classList.remove('valid'), confirmationVal++
+
+    if (!emailChecker.test(formInputEmail.value.toLowerCase())) {
         formInputEmail.classList.add('valid')
-    } else if (!formInputCheckbox.checked) {
+    } else formInputEmail.classList.remove('valid'), confirmationVal++
+
+    if (!formInputCheckbox.checked) {
         formInputCheckbox.classList.add('valid')
-    } else {
+    } else formInputCheckbox.classList.remove('valid'), confirmationVal++
+
+    if (confirmationVal === 3) {
         arrClass.forEach((e) => e.classList.remove('valid'))
         document.querySelector('#submit-btn').innerHTML = 'Sending...'
         fetchingData(namestr, emailstr)
