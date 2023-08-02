@@ -4,18 +4,18 @@ const emailChecker = new RegExp(
 )
 const arrFixedNumPricing = []
 
-window.onload = function () {
+window.onload = () => {
     history.scrollRestoration = 'manual'
 
     document
         .querySelector('#submit-btn')
-        .addEventListener('click', function (event) {
+        .addEventListener('click', (event) => {
             event.preventDefault()
         })
 
     document
         .querySelector('#modal-submit-btn')
-        .addEventListener('click', function (event) {
+        .addEventListener('click', (event) => {
             event.preventDefault()
         })
 
@@ -32,18 +32,18 @@ window.onresize = (e) => {
         : false
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const barraprogreso = document.querySelector('.porcentaje-barra')
 
     const botonTop = document.querySelector('.top')
 
-    window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', () => {
         let alturaUsuario = document.documentElement
         let scrollArriba = alturaUsuario.scrollTop || document.body.scrollTop
         let scrollAltura = alturaUsuario.scrollHeight || document.body.scrollHeight
         let porcen = (scrollArriba / (scrollAltura - alturaUsuario.clientHeight)) * 100
         barraprogreso.style.width = Math.round(porcen) + '%'
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', () => {
             if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
@@ -144,7 +144,7 @@ document.querySelector('#currency-select').addEventListener('change', () => {
     }
 })
 
-function validateForm() {
+const validateForm = () => {
     const formInputName = document.querySelector('#info-form input[type="text"]')
     const formInputEmail = document.querySelector(
         '#info-form input[type="email"]'
@@ -165,7 +165,7 @@ function validateForm() {
         arrClass.forEach((e) => e.classList.remove('valid'))
         document.querySelector('#submit-btn').innerHTML = 'Sending...'
         fetchingData(namestr, emailstr)
-        setTimeout(function (namestr, emailstr) {
+        setTimeout((namestr, emailstr) => {
             formInputName.value = ''
             formInputEmail.value = ''
             formInputCheckbox.checked = false
@@ -201,7 +201,7 @@ function validateForm() {
     }
 }
 
-function subscribeToNewsletter() {
+const subscribeToNewsletter = () => {
     const modalInputEmail = document.querySelector(
         '#modal-form input[type="email"]'
     )
@@ -214,7 +214,7 @@ function subscribeToNewsletter() {
     } else {
         fetchingDataFromModal(modalEmail)
         modalInputEmail.classList.remove('valid')
-        setTimeout(function () {
+        setTimeout(() => {
             modalInputEmail.value = ''
             localStorage.setItem('modalViewed', true)
             modalTitle.classList.remove('info-msg')
@@ -249,7 +249,7 @@ function subscribeToNewsletter() {
     }
 }
 
-function closethemodal() {
+const closethemodal = () => {
     localStorage.setItem('modalViewed', true)
     modal.classList.remove('modal-on')
 }
