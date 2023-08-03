@@ -1029,12 +1029,40 @@ Common breakpoints:
   }
   .header__menu-text-vertical {
     display: inherit;
+    height: 70px;
+    align-items: center;
   }
   .header__menu-text-vertical > a {
     margin-right: 5vw;
     font-weight: 700;
     font-size: 11px;
     color: #a5a5a5;
+  }
+  .header a {
+    display: flex;
+    height: 70px;
+    align-items: center;
+  }
+  .header a:link {
+    cursor: default;
+    text-decoration: none;
+    color: #a5a5a5;
+    transition: 0.5s;
+  }
+  .header a:visited {
+    text-decoration: none;
+    color: #a5a5a5;
+  }
+  .header a:hover {
+    transition: ease 0.5s;
+    text-decoration: underline solid #08a6e4 4px;
+    text-underline-offset: 20px;
+    font-weight: 600;
+    color: #000000;
+  }
+  .header a:active {
+    text-decoration: none;
+    color: #000000;
   }
   .screen1__btn {
     background: #08a6e4;

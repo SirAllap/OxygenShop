@@ -36,12 +36,40 @@
         }
         &__menu-text-vertical {
             display: inherit;
+            height: 70px;
+            align-items: center;
         }
         &__menu-text-vertical > a {
             margin-right: 5vw;
             font-weight: 700;
             font-size: 11px;
             color: #a5a5a5;
+        }
+        a {
+            display: flex;
+            height: 70px;
+            align-items: center;
+        }
+        a:link {
+            cursor: default;
+            text-decoration: none;
+            color: #a5a5a5;
+            transition: 0.5s;
+        }
+        a:visited {
+            text-decoration: none;
+            color: #a5a5a5;
+        }
+        a:hover {
+            transition: ease 0.5s;
+            text-decoration: underline solid $color-blue 4px;
+            text-underline-offset: 20px;
+            font-weight: 600;
+            color: #000000;
+        }
+        a:active {
+            text-decoration: none;
+            color: #000000;
         }
     }
     .screen1 {
