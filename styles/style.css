@@ -896,6 +896,11 @@ Common breakpoints:
 .screen3__info-icon > span {
   margin-left: 7px;
 }
+.screen3__info-contact {
+  text-decoration: none;
+  color: #a5a5a5;
+  margin-left: 7px;
+}
 .screen3__form {
   margin-top: 30px;
 }
