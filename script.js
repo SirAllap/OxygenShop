@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let porcen = (scrollArriba / (scrollAltura - alturaUsuario.clientHeight)) * 100
         barraprogreso.style.width = Math.round(porcen) + '%'
         window.addEventListener('scroll', () => {
-            if (window.Math.round(porcen) === 24 && localStorage.getItem('modalViewed') === null) {
+            if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
             } else if (window.Math.round(porcen) > 90) {
