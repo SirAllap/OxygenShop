@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
-            } else if (window.Math.round(porcen) > 95) {
+            } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
             } else if (window.Math.round(porcen) < 80) {
                 botonTop.classList.remove('active')
