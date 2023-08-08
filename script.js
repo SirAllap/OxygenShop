@@ -27,7 +27,7 @@ window.onload = () => {
 }
 
 window.onresize = (e) => {
-    window.innerWidth >= 960
+    window.innerWidth >= 965
         ? document.querySelector('.header').classList.remove('open')
         : false
 }
