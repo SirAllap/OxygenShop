@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let porcen = (scrollArriba / (scrollAltura - alturaUsuario.clientHeight)) * 100
         barraprogreso.style.width = Math.round(porcen) + '%'
         window.addEventListener('scroll', () => {
-            if (window.Math.round(porcen) === 20 && localStorage.getItem('modalViewed') === null) {
+            if (window.Math.round(porcen) === 2 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
-            } else if (window.Math.round(porcen) > 85) {
+            } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
-            } else if (window.Math.round(porcen) < 80) {
+            } else if (window.Math.round(porcen) < 75) {
                 botonTop.classList.remove('active')
             }
         })
