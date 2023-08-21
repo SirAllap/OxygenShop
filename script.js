@@ -23,7 +23,7 @@ window.onload = () => {
     if (localStorage.getItem('modalViewed') === null) {
         setTimeout(() => {
             modal.classList.add('modal-on')
-            mainContainer.style.opacity = "0.5"
+            mainContainer.style.opacity = "0.3"
         }, 5000)
     }
 }
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
-                mainContainer.style.opacity = "0.5"
+                mainContainer.style.opacity = "0.3"
             } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
             } else if (window.Math.round(porcen) < 75) {
@@ -69,7 +69,7 @@ document.addEventListener('click', (e) => {
         (e.target.matches('.newsletter__modal-close-icon') ||
             !e.target.closest('.newsletter'))
     ) {
-        return closethemodal()
+        return closethemodal(), mainContainer.style.opacity = "1"
     } else if (e.target.matches('.newsletter__modal-close-icon')) {
         return closethemodal()
     } else if (e.target.matches('.screen3__form-btn')) {
@@ -228,6 +228,7 @@ const subscribeToNewsletter = () => {
             modalTitle.classList.remove('info-msg')
             modal.classList.remove('modal-on')
             modalBtn.classList.remove('none-btn')
+            mainContainer.style.opacity = "1"
         }, 2000)
     }
     async function fetchingDataFromModal(e) {
@@ -259,7 +260,7 @@ const subscribeToNewsletter = () => {
 
 const closethemodal = () => {
     localStorage.setItem('modalViewed', true)
-    modal.classList.remove('modal-on')
+    modal.classList.remove('modal-on'), mainContainer.style.opacity = "1"
 }
 
 class Slider {
