@@ -1,4 +1,5 @@
 const modal = document.querySelector('.newsletter')
+const mainContainer = document.querySelector('.main-container')
 const emailChecker = new RegExp(
     "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
 )
@@ -22,6 +23,7 @@ window.onload = () => {
     if (localStorage.getItem('modalViewed') === null) {
         setTimeout(() => {
             modal.classList.add('modal-on')
+            mainContainer.style.opacity = "0.5"
         }, 5000)
     }
 }
@@ -47,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
+                mainContainer.style.opacity = "0.5"
             } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
             } else if (window.Math.round(porcen) < 75) {
@@ -90,7 +93,7 @@ document.querySelector('#currency-select').addEventListener('change', () => {
     )
     arrFixedNumPricing.length === 0
         ? currNumber.forEach((e) => arrFixedNumPricing.push(Number(e.innerHTML)))
-        : false
+        : falsecode
     if (currSelector.options[currSelector.selectedIndex].innerText === 'EUR') {
         return (
             currSymbol.forEach((e) => (e.innerHTML = '€')),
