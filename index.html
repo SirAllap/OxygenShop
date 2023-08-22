@@ -231,30 +231,13 @@
       </span>
       <div class="screen3">
         <h1 class="screen3__pricing-titel">Pricing</h1>
-        <div
-          class="screen3__currency-selector"
-          style="text-align: center; padding: 0 0 30px 0"
-        >
+        <div class="screen3__currency-selector">
           <label class="screen3__currency-selector-title" for="currency-select">
           </label>
-          <br />
-          <br />
-          <select
-            name="currency"
-            id="currency-select"
-            style="
-              border-width: 0 0 1px 0;
-              border-color: #95989a;
-              width: fit-content;
-              text-align: center;
-            "
-          >
-            <option value="" selected disabled hidden>
-              Preferred currency:
-            </option>
-            <option value="value1">USD</option>
-            <option value="value2">EUR</option>
-            <option value="value3">GBP</option>
+          <select name="currency" id="currency-select">
+            <option value="value1">USD - $</option>
+            <option value="value2">EUR - €</option>
+            <option value="value3">GBP - £</option>
           </select>
         </div>
         <section class="screen3__pricing-section">
@@ -264,7 +247,8 @@
               <span>
                 <span class="screen3__pricing-all-card-left-currency-symbol"
                   >$</span
-                ><span class="screen3__pricing-all-card-left-currency-number"
+                ><span
+                  class="screen3__pricing-all-card-left-currency-number basic"
                   >0</span
                 >
               </span>

@@ -11,6 +11,45 @@
         text-align: center;
     }
 
+    &__currency-selector {
+        margin: auto;
+        padding: 0;
+        position: relative;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
+        border-radius: 4px;
+        width: fit-content;
+    }
+    &__currency-selector select {
+        font-size: 1rem;
+        font-weight: normal;
+        // max-width: 100%;
+        width: 200px;
+        padding: 8px 24px 8px 10px;
+        border: none;
+        background-color: transparent;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    &__currency-selector select:active,
+    .select-dropdown select:focus {
+        outline: none;
+        box-shadow: none;
+    }
+    &__currency-selector:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        width: 0;
+        height: 0;
+        margin-top: -2px;
+        border-top: 5px solid #aaa;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+
     /* card1 */
     &__pricing-card {
         transition: 0.5s;
@@ -19,6 +58,7 @@
         width: 310px;
         margin: auto;
         height: 270px;
+        background-color: white;
     }
     &__pricing-card:hover {
         border: 1px solid $color-red;
@@ -48,6 +88,9 @@
         color: $color-red;
         width: 50%;
         display: inline;
+    }
+    &__pricing-card-left .basic {
+        margin: 0 50px 0 0;
     }
     &__pricing-card-right {
         transition: 0.5s;
@@ -103,6 +146,7 @@
         margin: auto;
         height: 270px;
         margin-top: 60px;
+        background-color: white;
     }
     &__pricing-card2:hover {
         border: 1px solid $color-blue;
@@ -179,6 +223,7 @@
         margin: auto;
         height: 270px;
         margin-top: 60px;
+        background-color: white;
     }
     &__pricing-card3:hover {
         border: 1px solid $color-green;
@@ -389,6 +434,17 @@
             padding: 20px 90px 20px 90px;
             text-decoration: none;
             outline: none;
+        }
+    }
+    @include xs {
+        &__currency-selector {
+            margin: 0 auto 30px;
+            padding: 0;
+            position: relative;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+            border-radius: 4px;
+            width: fit-content;
         }
     }
     /* info-form */

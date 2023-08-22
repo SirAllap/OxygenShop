@@ -29,7 +29,7 @@ window.onload = () => {
 }
 
 window.onresize = () => {
-    window.innerWidth >= 960
+    window.innerWidth >= 960 && document.querySelector('.header').classList.contains('open')
         ? document.querySelector('.header').classList.remove('open')
         : false
 }
@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (scrollCurrentPosition < 2) {
                 headerOpacity.classList.remove('active')
             }
+            if (document.querySelector('.header').classList.contains('open')) {
+                document.querySelector('.header').classList.remove('open')
+            }
         })
     })
 })
@@ -110,14 +113,14 @@ document.querySelector('#currency-select').addEventListener('change', () => {
     arrFixedNumPricing.length === 0
         ? currNumber.forEach((e) => arrFixedNumPricing.push(Number(e.innerHTML)))
         : false
-    if (currSelector.options[currSelector.selectedIndex].innerText === 'EUR') {
+    if (currSelector.options[currSelector.selectedIndex].innerText === 'EUR - €') {
         return (
             currSymbol.forEach((e) => (e.innerHTML = '€')),
             resetPrices(),
             fetchDataFromCurrencyAPI('eur')
         )
     } else if (
-        currSelector.options[currSelector.selectedIndex].innerText === 'GBP'
+        currSelector.options[currSelector.selectedIndex].innerText === 'GBP - £'
     ) {
         return (
             currSymbol.forEach((e) => (e.innerHTML = '£')),
