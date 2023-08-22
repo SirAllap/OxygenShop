@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalOff = true
                 modal.classList.add('modal-on')
                 mainContainer.style.opacity = "0.5"
-            } else if (window.Math.round(porcen) > 91) {
+            } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
             } else if (window.Math.round(porcen) < 75) {
                 botonTop.classList.remove('active')
