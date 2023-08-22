@@ -23,7 +23,7 @@ window.onload = () => {
     if (localStorage.getItem('modalViewed') === null) {
         setTimeout(() => {
             modal.classList.add('modal-on')
-            mainContainer.style.opacity = "0.3"
+            mainContainer.style.opacity = "0.5"
         }, 5000)
     }
 }
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
-                mainContainer.style.opacity = "0.3"
+                mainContainer.style.opacity = "0.5"
             } else if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
             } else if (window.Math.round(porcen) < 75) {
