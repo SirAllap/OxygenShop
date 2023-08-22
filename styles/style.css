@@ -125,6 +125,7 @@ Common breakpoints:
   position: relative;
   top: -20px;
   left: 30px;
+  width: 200px;
 }
 .footer__right-section {
   display: flex;
@@ -689,6 +690,7 @@ Common breakpoints:
   font-family: "Open Sans";
   font-weight: 400;
   font-size: 14px;
+  width: fit-content;
 }
 .screen3__pricing-card-right > div {
   margin: 20px;
