@@ -19,6 +19,7 @@ Common breakpoints:
   width: 100vw;
   box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.15);
   position: fixed;
+  top: 0;
   transition: all 0.5s;
 }
 .header__logo {
@@ -97,6 +98,14 @@ Common breakpoints:
 }
 
 /* BURGER MENU */
+.header.active {
+  opacity: 0.8;
+}
+
+.header.active:hover {
+  opacity: 1;
+}
+
 /* 
 Common breakpoints:
 - 320px — 480px: Mobile devices

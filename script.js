@@ -36,8 +36,8 @@ window.onresize = (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const barraprogreso = document.querySelector('.porcentaje-barra')
-
     const botonTop = document.querySelector('.top')
+    const headerOpacity = document.querySelector('.header')
 
     window.addEventListener('scroll', () => {
         let alturaUsuario = document.documentElement
@@ -50,10 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalOff = true
                 modal.classList.add('modal-on')
                 mainContainer.style.opacity = "0.5"
-            } else if (window.Math.round(porcen) > 90) {
+            }
+            if (window.Math.round(porcen) > 90) {
                 botonTop.classList.add('active')
-            } else if (window.Math.round(porcen) < 75) {
+            }
+            if (window.Math.round(porcen) < 75) {
                 botonTop.classList.remove('active')
+            }
+            if (window.Math.round(porcen) > 2) {
+                headerOpacity.classList.add('active')
+            }
+            if (window.Math.round(porcen) < 2) {
+                headerOpacity.classList.remove('active')
             }
         })
     })
