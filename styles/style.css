@@ -52,7 +52,7 @@ Common breakpoints:
 }
 .header__link-wider {
   position: absolute;
-  width: 100%;
+  width: fit-content;
   height: 25px;
 }
 .header a:link {
@@ -125,7 +125,6 @@ Common breakpoints:
   position: relative;
   top: -20px;
   left: 30px;
-  width: 200px;
 }
 .footer__right-section {
   display: flex;
@@ -134,6 +133,7 @@ Common breakpoints:
   width: 50px;
   right: -75vw;
   margin-left: 10px;
+  display: inline;
 }
 .footer__right-section > a:last-child {
   margin-left: 15px;
@@ -669,18 +669,22 @@ Common breakpoints:
   position: relative;
   left: 70px;
   top: 70px;
+  width: fit-content;
 }
 .screen3__pricing-card-left > p {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 10px;
+  width: 50px;
 }
 .screen3__pricing-card-left > span {
   font-family: "Open Sans";
   font-weight: 300;
   font-size: 46px;
   color: #fb3b64;
+  width: 50%;
+  display: inline;
 }
 .screen3__pricing-card-right {
   transition: 0.5s;
@@ -691,6 +695,7 @@ Common breakpoints:
   font-weight: 400;
   font-size: 14px;
   width: fit-content;
+  display: inline-block;
 }
 .screen3__pricing-card-right > div {
   margin: 20px;

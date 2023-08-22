@@ -32,18 +32,22 @@
         position: relative;
         left: 70px;
         top: 70px;
+        width: fit-content;
     }
     &__pricing-card-left > p {
         font-family: "Raleway", sans-serif;
         font-weight: 700;
         font-size: 20px;
         margin-bottom: 10px;
+        width: 50px;
     }
     &__pricing-card-left > span {
         font-family: "Open Sans";
         font-weight: 300;
         font-size: 46px;
         color: $color-red;
+        width: 50%;
+        display: inline;
     }
     &__pricing-card-right {
         transition: 0.5s;
@@ -54,6 +58,7 @@
         font-weight: 400;
         font-size: 14px;
         width: fit-content;
+        display: inline-block;
     }
     &__pricing-card-right > div {
         margin: 20px;
