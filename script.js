@@ -93,7 +93,7 @@ document.querySelector('#currency-select').addEventListener('change', () => {
     )
     arrFixedNumPricing.length === 0
         ? currNumber.forEach((e) => arrFixedNumPricing.push(Number(e.innerHTML)))
-        : falsecode
+        : false
     if (currSelector.options[currSelector.selectedIndex].innerText === 'EUR') {
         return (
             currSymbol.forEach((e) => (e.innerHTML = '€')),
