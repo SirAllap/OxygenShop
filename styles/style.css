@@ -154,14 +154,12 @@ Common breakpoints:
 
 body {
   min-width: 320px;
-  overflow-x: hidden;
 }
 
 @media screen and (min-width: 140px) {
   body,
   html {
     width: 100vw;
-    overflow-x: hidden;
   }
 }
 html {
