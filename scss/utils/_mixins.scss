@@ -14,13 +14,18 @@ Common breakpoints:
 // $xtra-large: 1200px;
 
 $breakpoints: (
-    "xs": 0,
+    "xs": 320px,
     "sm": 480px,
     "md": 720px,
     "lg": 960px,
     "xl": 1200px
 );
 
+@mixin xs {
+    @media (min-width: map-get($breakpoints, "xs")) {
+        @content;
+    }
+}
 @mixin sm {
     @media (min-width: map-get($breakpoints, "sm")) {
         @content;

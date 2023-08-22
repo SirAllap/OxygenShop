@@ -28,7 +28,7 @@ window.onload = () => {
     }
 }
 
-window.onresize = (e) => {
+window.onresize = () => {
     window.innerWidth >= 960
         ? document.querySelector('.header').classList.remove('open')
         : false
@@ -37,6 +37,7 @@ window.onresize = (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     const barraprogreso = document.querySelector('.porcentaje-barra')
     const botonTop = document.querySelector('.top')
+    const botonTopCircle = document.querySelector('.top-circle')
     const headerOpacity = document.querySelector('.header')
 
     window.addEventListener('scroll', () => {
@@ -44,23 +45,30 @@ document.addEventListener('DOMContentLoaded', () => {
         let scrollArriba = alturaUsuario.scrollTop || document.body.scrollTop
         let scrollAltura = alturaUsuario.scrollHeight || document.body.scrollHeight
         let porcen = (scrollArriba / (scrollAltura - alturaUsuario.clientHeight)) * 100
+        let scrollCurrentPosition = window.Math.round(porcen)
         barraprogreso.style.width = Math.round(porcen) + '%'
         window.addEventListener('scroll', () => {
-            if (window.Math.round(porcen) === 25 && localStorage.getItem('modalViewed') === null) {
+            if (scrollCurrentPosition === 25 && localStorage.getItem('modalViewed') === null) {
                 modalOff = true
                 modal.classList.add('modal-on')
                 mainContainer.style.opacity = "0.5"
             }
-            if (window.Math.round(porcen) > 90) {
+            if (scrollCurrentPosition > 90) {
                 botonTop.classList.add('active')
             }
-            if (window.Math.round(porcen) < 75) {
+            if (scrollCurrentPosition < 75) {
                 botonTop.classList.remove('active')
             }
-            if (window.Math.round(porcen) > 2) {
+            if (scrollCurrentPosition > 90 && window.innerWidth < 720) {
+                botonTopCircle.classList.add('active')
+            }
+            if (scrollCurrentPosition < 75 && window.innerWidth < 720) {
+                botonTopCircle.classList.remove('active')
+            }
+            if (scrollCurrentPosition > 2) {
                 headerOpacity.classList.add('active')
             }
-            if (window.Math.round(porcen) < 2) {
+            if (scrollCurrentPosition < 2) {
                 headerOpacity.classList.remove('active')
             }
         })
