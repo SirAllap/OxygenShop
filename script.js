@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (document.querySelector('.header').classList.contains('open')) {
                 document.querySelector('.header').classList.remove('open')
             }
+            if (scrollCurrentPosition === 75) {
+                wakeUpSlider(1)
+            }
         })
     })
 })
@@ -356,7 +359,12 @@ class Slider {
 }
 
 const sl = new Slider('slider')
-sl.startSlider()
+
+let waked = 0
+const wakeUpSlider = (checker) => {
+    waked += checker
+    waked !== 1 ? false : sl.startSlider()
+}
 
 document.addEventListener('click', (e) => {
     e.target.matches('.next')

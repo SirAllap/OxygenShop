@@ -445,7 +445,7 @@ html {
   left: 50%;
   transform: translate(-50%, 0);
   margin-top: 15%;
-  width: 95%;
+  width: 85vw;
   user-select: none;
 }
 @media (min-width: 720px) {
@@ -556,7 +556,7 @@ Common breakpoints:
   background-color: rgba(8, 166, 228, 0.6901960784);
 }
 .screen1__img {
-  width: 100vw;
+  width: 75vw;
   padding-top: 20%;
 }
 @media (min-width: 480px) {
