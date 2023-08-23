@@ -4,8 +4,12 @@ const emailChecker = new RegExp(
     "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
 )
 const arrFixedNumPricing = []
+const loading = document.querySelector('.spinner')
 
 window.onload = () => {
+    loading.classList.add('active')
+
+    mainContainer.style.opacity = "0"
     history.scrollRestoration = 'manual'
 
     document
@@ -26,6 +30,10 @@ window.onload = () => {
             mainContainer.style.opacity = "0.5"
         }, 5000)
     }
+    setTimeout(() => {
+        loading.classList.remove('active')
+        mainContainer.style.opacity = "1"
+    }, 800)
 }
 
 window.onresize = () => {

@@ -178,6 +178,41 @@ html {
   scroll-behavior: smooth;
 }
 
+#loading-bar-spinner.spinner {
+  display: none;
+}
+
+#loading-bar-spinner.spinner.active {
+  display: block;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+  position: absolute;
+  z-index: 19 !important;
+  animation: loading-bar-spinner 450ms linear infinite;
+}
+
+#loading-bar-spinner.spinner .spinner-icon {
+  width: 90px;
+  height: 90px;
+  border: solid 10px transparent;
+  border-top-color: #08a6e4 !important;
+  border-left-color: #fb3b64 !important;
+  border-right-color: #55dfb4 !important;
+  border-radius: 50%;
+}
+
+@keyframes loading-bar-spinner {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 /*Barra progreso*/
 .barra-progreso {
   position: fixed;
@@ -657,6 +692,8 @@ Common breakpoints:
   border-radius: 5px;
   width: 100%;
   background-color: #55dfb4;
+  position: relative;
+  bottom: -5px;
 }
 
 /* SCREEN2 */
