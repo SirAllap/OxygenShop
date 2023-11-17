@@ -1,7 +1,5 @@
 Construir una página web de un diseño preestablecido. Utilizar HTML, SASS y BEM. 
 
-### &
-
 Añadir funcionalidades con JS
 
 AWS: http://test-repo-oxygen-shop.s3-website.eu-west-3.amazonaws.com/
