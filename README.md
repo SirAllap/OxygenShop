@@ -4,8 +4,6 @@ Construir una página web de un diseño preestablecido. Utilizar HTML, SASS y BE
 
 Añadir funcionalidades con JS
 
-Deploy gh-pages: https://sirallap.github.io/OxygenShop/
-
 AWS: http://test-repo-oxygen-shop.s3-website.eu-west-3.amazonaws.com/
 
 #
