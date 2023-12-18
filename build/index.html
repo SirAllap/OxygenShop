@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-3X2CRM8W04"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-3X2CRM8W04')
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./assets/favico_oxygen_academy.png"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>OXYGEN Shop</title>
+  </head>
+
+  <body>
+    <!-- loading -->
+    <!-- <div class="load"></div> -->
+    <div id="loading-bar-spinner" class="spinner">
+      <div class="spinner-icon"></div>
+    </div>
+    <!-- loading -->
+
+    <!-- barra progreso -->
+    <div class="barra-progreso">
+      <div class="porcentaje-barra">
+        <span style="color: transparent">0</span>
+      </div>
+    </div>
+    <!-- barra progreso -->
+
+    <!-- modal subscribe newsletter -->
+    <div class="newsletter">
+      <form class="newsletter__modal-form" id="modal-form">
+        <i class="newsletter__modal-close-icon fa-solid fa-xmark fa-l"></i>
+        <h3 class="newsletter__modal-title">Subscribe to our newsletter</h3>
+        <label
+          style="
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-family: 'Open Sans';
+            font-weight: 600;
+            font-size: 11px;
+            letter-spacing: 5px;
+            padding-top: 15px;
+          "
+          for="modal-form-email"
+          >EMAIL</label
+        >
+        <input
+          class="newsletter__newsletter-input-email"
+          type="email"
+          placeholder="e.g. monty@python.com"
+          name="modal-form-email"
+          id="modal-form-email"
+        /><br />
+        <br />
+        <button class="newsletter__modal-form-btn" id="modal-submit-btn">
+          Subscribe
+        </button>
+      </form>
+    </div>
+    <!-- modal subscribe newsletter -->
+
+    <!-- MainContainer -->
+    <div class="main-container">
+      <!-- header -->
+      <header class="header">
+        <nav class="header__menu-mobile">
+          <a href=".">
+            <img
+              class="header__logo"
+              src="./assets/OxygenShop.png"
+              alt="header company logo"
+            />
+          </a>
+          <!-- ! <a href="#open"> -->
+          <i class="header__burger-icon fa-solid fa-bars fa-xl"></i>
+          <!-- ! </a> -->
+          <nav class="header__close-burger">
+            <!-- ! <a href="#close"> -->
+            <i class="header__close-icon fa-solid fa-xmark fa-2xl"></i>
+            <!-- ! </a> -->
+            <div class="header__menu-text">
+              <a href="#whyus"
+                >WHY US <span class="header__link-wider"></span
+              ></a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#benefits"
+                >BENEFITS <span class="header__link-wider"></span
+              ></a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#pricing"
+                >PRICES <span class="header__link-wider"></span
+              ></a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#info-form"
+                >CONTACT <span class="header__link-wider"></span
+              ></a>
+            </div>
+          </nav>
+        </nav>
+        <nav class="header__menu-normal">
+          <a href=".">
+            <img
+              class="header__logo"
+              src="./assets/OxygenShop.png"
+              alt="header company logo"
+            />
+          </a>
+          <div class="header__menu-text-vertical">
+            <!-- <hr class="header__menu-text-vertical-line" /> -->
+            <div class="header__menu-text">
+              <a href="#whyus">WHY US</a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#benefits">BENEFITS</a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#pricing">PRICES</a>
+            </div>
+            <div class="header__menu-text">
+              <a href="#info-form">CONTACT</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- header -->
+
+      <!-- screen1 -->
+      <div id="whyus" class="screen1">
+        <h1 class="screen1__h1-text">Sell More!</h1>
+        <p class="screen1__p-text">
+          Open shop on our platform and increase your sales
+        </p>
+        <a href="#pricing" class="screen1__btn">Open your shop</a>
+        <img
+          class="screen1__img"
+          src="./assets/laptop&stuff.png"
+          alt="laptop & various stuff"
+        />
+        <p class="screen1__under-laptop-text">
+          The most popular sales platform in country
+        </p>
+        <main class="screen1__main">
+          <section class="screen1__info-box">
+            <img src="./assets/dailyEntries.png" alt="daily entries" />
+            <p>daily entries</p>
+          </section>
+          <section class="screen1__info-box">
+            <img src="./assets/seenProduct.png" alt="seen products every day" />
+            <p>seen products every day</p>
+          </section>
+          <section class="screen1__info-box">
+            <img src="./assets/addedPost.png" alt="added posts daily" />
+            <p>added post daily</p>
+          </section>
+        </main>
+      </div>
+      <!-- screen1 -->
+
+      <!-- screen2 -->
+      <span id="benefits"></span>
+      <div class="screen2">
+        <main class="screen2__card1">
+          <section class="screen2__img-section">
+            <img src="./assets/beAlwaysFirst.png" alt="be always first" />
+          </section>
+          <section class="screen2__card1-text-section">
+            <h1>Be always first</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <hr class="screen2__card1-line-section" />
+          </section>
+        </main>
+        <main class="screen2__card2">
+          <section class="screen2__img-section">
+            <img src="./assets/yourShop.png" alt="your shop is where you are" />
+          </section>
+          <section class="screen2__card2-text-section">
+            <h1>Your shop is where you are!</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <hr class="screen2__card2-line-section" />
+          </section>
+        </main>
+        <main class="screen2__card3">
+          <section class="screen2__card3-text-section">
+            <h1>Increase recognition your brand!</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <hr class="screen2__card3-line-section" />
+          </section>
+          <section class="screen2__card3-img-section">
+            <img
+              src="./assets/increaseRecognition.png"
+              alt="increase recognition your brand"
+            />
+          </section>
+        </main>
+      </div>
+      <!-- screen2 -->
+
+      <!-- screen3 -->
+      <span id="pricing" style="height: 20px; width: 100%; padding: 80px">
+        <br />
+        <br />
+        <br />
+      </span>
+      <div class="screen3">
+        <h1 class="screen3__pricing-titel">Pricing</h1>
+        <div class="screen3__currency-selector">
+          <label class="screen3__currency-selector-title" for="currency-select">
+          </label>
+          <select name="currency" id="currency-select">
+            <option value="value1">USD - $</option>
+            <option value="value2">EUR - €</option>
+            <option value="value3">GBP - £</option>
+          </select>
+        </div>
+        <section class="screen3__pricing-section">
+          <article class="screen3__pricing-card">
+            <figure class="screen3__pricing-card-left">
+              <p>Basic</p>
+              <span>
+                <span class="screen3__pricing-all-card-left-currency-symbol"
+                  >$</span
+                ><span
+                  class="screen3__pricing-all-card-left-currency-number basic"
+                  >0</span
+                >
+              </span>
+            </figure>
+            <figure class="screen3__pricing-card-right">
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>100 MB HDD</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>1 Subdomain</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>2 E-mails</span>
+              </div>
+              <div>
+                <i class="fa-solid fa-square-xmark" style="color: #eb476e"></i>
+                <span>Two years license</span>
+              </div>
+              <div>
+                <i class="fa-solid fa-square-xmark" style="color: #eb476e"></i>
+                <span>Full support</span>
+              </div>
+            </figure>
+            <button class="screen3__pricing-card-btn1">Begin</button>
+          </article>
+          <article class="screen3__pricing-card2">
+            <figure class="screen3__pricing-card2-left">
+              <p>Professional</p>
+              <span>
+                <span class="screen3__pricing-all-card-left-currency-symbol"
+                  >$</span
+                ><span class="screen3__pricing-all-card-left-currency-number"
+                  >25</span
+                >
+              </span>
+              <p>Limiter offer</p>
+            </figure>
+            <figure class="screen3__pricing-card-right">
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>500 MB HDD</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>2 Subdomain</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>5 E-mails</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>One year license</span>
+              </div>
+              <div>
+                <i class="fa-solid fa-square-xmark" style="color: #eb476e"></i>
+                <span>Full support</span>
+              </div>
+            </figure>
+            <button class="screen3__pricing-card-btn2">Begin</button>
+          </article>
+          <article class="screen3__pricing-card3">
+            <figure class="screen3__pricing-card3-left">
+              <p>Premium</p>
+              <span>
+                <span class="screen3__pricing-all-card-left-currency-symbol"
+                  >$</span
+                ><span class="screen3__pricing-all-card-left-currency-number"
+                  >60</span
+                >
+              </span>
+              <p>Limiter offer</p>
+            </figure>
+            <figure class="screen3__pricing-card-right">
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>2 GB HDD</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>5 Subdomain</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>20 E-mails</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>Two years license</span>
+              </div>
+              <div>
+                <i
+                  class="fa-regular fa-square-check"
+                  style="color: #55dfb4"
+                ></i>
+                <span>Full support</span>
+              </div>
+            </figure>
+            <button class="screen3__pricing-card-btn3">Begin</button>
+          </article>
+        </section>
+        <!--slider -->
+        <div class="img-slider" id="slider">
+          <img
+            id="img0"
+            class="img-slider__img"
+            src="https://picsum.photos/id/1/590/238"
+            alt="Imagen 1"
+          />
+          <img
+            id="img1"
+            class="img-slider__img"
+            src="https://picsum.photos/id/2/507/200"
+            alt="Imagen 2"
+          />
+          <img
+            id="img2"
+            class="img-slider__img"
+            src="https://picsum.photos/id/3/506/200"
+            alt="Imagen 3"
+          />
+          <img
+            id="img3"
+            class="img-slider__img"
+            src="https://picsum.photos/id/4/505/200"
+            alt="Imagen 4"
+          />
+          <img
+            id="img4"
+            class="img-slider__img"
+            src="https://picsum.photos/id/5/504/200"
+            alt="Imagen 5"
+          />
+          <img
+            id="img5"
+            class="img-slider__img"
+            src="https://picsum.photos/id/6/503/200"
+            alt="Imagen 6"
+          />
+          <img
+            id="img6"
+            class="img-slider__img"
+            src="https://picsum.photos/id/7/502/200"
+            alt="Imagen 7"
+          />
+          <img
+            id="img7"
+            class="img-slider__img"
+            src="https://picsum.photos/id/8/501/200"
+            alt="Imagen 8"
+          />
+          <span class="material-symbols-outlined img-slider__icon prev">
+            arrow_back_ios
+          </span>
+          <span class="material-symbols-outlined img-slider__icon next">
+            arrow_forward_ios
+          </span>
+          <div class="img-slider__dots-container"></div>
+        </div>
+        <!-- slider -->
+
+        <!-- info + form -->
+        <section class="screen3__info-form">
+          <article class="screen3__info">
+            <h1>Any questions?</h1>
+            <p>Leave your email address or call us!</p>
+            <div class="screen3__info-icons">
+              <div class="screen3__info-icon">
+                <i
+                  class="fa-sharp fa-regular fa-envelope fa-xl"
+                  style="color: #07ace6"
+                ></i>
+                <a
+                  class="screen3__info-contact"
+                  href="mailto: info-shop@oxygen.dev"
+                  >info-shop@oxygen.dev</a
+                >
+              </div>
+              <div class="screen3__info-icon">
+                <i
+                  class="fa-solid fa-phone-flip fa-xl"
+                  style="color: #07ace6"
+                ></i>
+                <a class="screen3__info-contact" href="tel:+34683652748"
+                  >683 652 748</a
+                >
+              </div>
+            </div>
+          </article>
+          <form id="info-form" class="screen3__form">
+            <label for="form-name">NAME</label>
+            <span id="confirmation"></span><br />
+            <input
+              class="screen3__form-name-input"
+              type="text"
+              placeholder="e.g. Monty"
+              name="form-name"
+              id="form-name"
+              required
+            /><br /><br />
+
+            <label for="form-email">EMAIL</label><br />
+            <input
+              class="screen3__form-email-input"
+              type="email"
+              placeholder="e.g. monty@python.com"
+              name="form-email"
+              id="form-email"
+              required
+            /><br />
+
+            <div class="screen3__form-input-checkbox">
+              <input
+                type="checkbox"
+                name="form-checkbox"
+                id="form-checkbox"
+                required
+              />
+              <div>
+                I hereby give consent for my personal data included in my
+                application to be processed for the purposes of the recruitment
+                process under the European Parliament’s and Council of the
+                European Union Regulation on the Protection of Natural Persons
+                as of 27 April 2016, with regard to the processing of personal
+                data and on the free movement of such data, and repealing
+                Directive 95/46/EC (Data Protection Directive)
+              </div>
+            </div>
+            <br />
+            <button id="submit-btn" class="screen3__form-btn">Send</button>
+          </form>
+        </section>
+        <!-- info + form -->
+      </div>
+      <!-- screen3 -->
+
+      <!-- return to the top -->
+      <a href="#" class="top">
+        <i class="fa-solid fa-arrow-up-long" style="color: #fff"></i>
+        &nbsp;Return to the top&nbsp;
+        <i class="fa-solid fa-arrow-up-long" style="color: #fff"></i>
+      </a>
+      <a href="#" class="top-circle">
+        <i class="fa-solid fa-arrow-up-long" style="color: #fff"></i>
+      </a>
+      <!-- return to the top -->
+
+      <!-- footer -->
+      <footer class="footer">
+        <section class="footer__left-section">
+          <a href=".">
+            <img
+              class="footer__logo"
+              src="./assets/OxygenShop.png"
+              alt="header company logo"
+            />
+          </a>
+          <br />
+          <span class="footer__copyright"
+            >© 2022 OXYGEN, All Rights Reserved</span
+          >
+        </section>
+        <section class="footer__right-section">
+          <a href="https://www.twitter.com" target="_blank"
+            ><i
+              class="fa-brands fa-square-twitter fa-2xl"
+              style="color: #55acee"
+            ></i
+          ></a>
+          <a href="https://www.facebook.com" target="_blank"
+            ><i
+              class="fa-brands fa-square-facebook fa-2xl"
+              style="color: #3b5998"
+            ></i
+          ></a>
+        </section>
+      </footer>
+      <!-- footer -->
+    </div>
+    <!-- MainContainer -->
+  </body>
+  <script src="script.js"></script>
+  <script
+    src="https://kit.fontawesome.com/76192069aa.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
